@@ -1,9 +1,48 @@
-html {
-  display: table;
-  margin: auto;
+html,
+body {
+  margin: 0;
 }
 
 body {
-  background-color: #001220;
+  background-color: hsl(206, 100%, 6%);
   color: white;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  border: 1px solid red;
+  border: 0;
+}
+
+.header,
+.footer,
+.gallery {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.header,
+.footer {
+  border: 1px solid green;
+  width: 50%;
+}
+
+.header {
+  height: 20px;
+}
+
+.gallery {
+  width: 80%;
+  border: 1px solid blue;
+  flex: 1; /* takes up all remaining space */
+}
+
+.footer {
+  height: 5px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
