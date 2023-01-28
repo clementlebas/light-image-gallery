@@ -1,0 +1,9 @@
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  background-color: #001220;
+  color: white;
+}
