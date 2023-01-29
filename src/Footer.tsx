@@ -7,7 +7,11 @@ type Props = {
 };
 
 const Footer: React.FC<Props> = (props) => {
-  return <div className="footer">Light</div>;
+  return (
+    <div className="footer">
+      <div className="footer__content">Light</div>
+    </div>
+  );
 };
 
 export default Footer;

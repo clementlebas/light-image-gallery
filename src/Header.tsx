@@ -10,7 +10,6 @@ const Header: React.FC<Props> = (props) => {
   return (
     <div className="header">
       <div>Picture</div>
-      <div>Description</div>
     </div>
   );
 };

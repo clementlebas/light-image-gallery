@@ -7,7 +7,29 @@ type Props = {
 };
 
 const Gallery: React.FC<Props> = (props) => {
-  return <div className="gallery">Gallery</div>;
+  return (
+    <div className="gallery">
+      <div className="gallery__content">
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc gallery__bloc--last" />
+      </div>
+      <div className="gallery__content">
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc" />
+        <div className="gallery__bloc gallery__bloc--last" />
+      </div>
+    </div>
+  );
 };
 
 export default Gallery;

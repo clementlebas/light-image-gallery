@@ -4,7 +4,7 @@ body {
 }
 
 body {
-  background-color: hsl(206, 100%, 6%);
+  background-color: #00111f;
   color: white;
 }
 
@@ -18,30 +18,56 @@ body {
 }
 
 .header,
-.footer,
-.gallery {
+.gallery__content {
   padding: 10px;
   margin-bottom: 2px;
 }
 
 .header,
 .footer {
-  border: 1px solid green;
-  width: 50%;
+  position: fixed;
+  background-color: #00111f;
+  font-size: 12px;
 }
 
-.header {
+.header,
+.footer__content {
+  width: 50%;
   height: 20px;
 }
 
 .gallery {
-  width: 80%;
-  border: 1px solid blue;
-  flex: 1; /* takes up all remaining space */
+  width: 70%;
+  margin-top: 80px;
+}
+
+.gallery__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery__bloc {
+  border: 1px solid yellow;
+  flex-basis: 150px;
+  height: 150px;
+  border-radius: 10px;
+  flex-grow: 1;
+}
+
+.gallery__bloc--last {
+  border-color: brown;
 }
 
 .footer {
-  height: 5px;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+}
+
+.footer__content {
   display: flex;
   justify-content: end;
   align-items: center;
