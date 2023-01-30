@@ -1,9 +1,9 @@
 export const data = {
   header: {
-    title: "My AI gallery",
+    title: "Hey, I'm Clément Le Bas.",
     description:
-      "Some pictures that I generate with AI tools set by topic I like !",
-    profile: "/src/profile.png",
+      "Welcome my Ai image gallery generated with MidJourney and Dall-e !",
+    image: "profile.png",
     disabled: false,
   },
   gallery: {
