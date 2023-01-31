@@ -2,7 +2,7 @@ export const data = {
   header: {
     title: "Hey, I'm Clément Le Bas.",
     description:
-      "Welcome my Ai image gallery generated with MidJourney and Dall-e !",
+      "Welcome to my AI image gallery generated with MidJourney and Dall-e !",
     image: "profile.png",
     disabled: false,
   },
@@ -12,7 +12,7 @@ export const data = {
         name: "Gallery 1",
         images: [
           {
-            name: "image (1).png",
+            name: "image (19).png",
             description: "",
           },
           {
@@ -93,7 +93,7 @@ export const data = {
             description: "",
           },
           {
-            name: "image (19).png",
+            name: "image (1).png",
             description: "",
           },
           {
