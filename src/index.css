@@ -90,12 +90,21 @@ body {
 }
 
 .gallery__bloc {
-  transition: transform 0.2s ease;
+  padding: 0px;
+  transition: padding 0.2s ease;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 0.2s all ease;
 }
 
 .gallery__bloc:hover {
   cursor: pointer;
-  transform: scale(0.95);
+  padding: 5px;
+}
+
+.gallery__bloc.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .gallery__img {

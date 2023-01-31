@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { data } from "./configs";
 import "./index.css";
@@ -10,15 +10,31 @@ type Props = {
 const Gallery: React.FC<Props> = (props) => {
   const galleries = data.gallery.category;
 
+  useEffect(() => {
+    const reveal = () => {
+      var reveals = document.querySelectorAll(".gallery__bloc");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = -20;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    };
+    window.addEventListener("scroll", reveal);
+    reveal();
+  }, []);
+
   return (
-    <div className="gallery">
-      {galleries.map((gallery, index) => {
+    <>
+      {galleries.map((gallery, indexGallery) => {
         return (
-          <>
-            <div className="gallery__name" key={index}>
-              {gallery.name}
-            </div>
-            <div className="gallery__content" key={index}>
+          <div className="gallery" key={indexGallery}>
+            <div className="gallery__name">{gallery.name}</div>
+            <div className="gallery__content">
               {gallery.images.map((image, index) => {
                 return (
                   <div
@@ -40,10 +56,10 @@ const Gallery: React.FC<Props> = (props) => {
                 );
               })}
             </div>
-          </>
+          </div>
         );
       })}
-    </div>
+    </>
   );
 };
 
