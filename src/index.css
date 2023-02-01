@@ -15,9 +15,9 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
   border: 1px solid red;
   border: 0;
+  padding: 20px 0;
 }
 
 .header__content,
@@ -71,8 +71,16 @@ body {
 .gallery {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
   margin-top: 120px;
+}
+
+.gallery--second-color {
+  background-color: #002137;
+}
+
+.gallery__name {
+  padding: 20px 10%;
 }
 
 .gallery__content {
@@ -112,6 +120,8 @@ body {
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
+    0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .header,
