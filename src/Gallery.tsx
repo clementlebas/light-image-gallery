@@ -10,20 +10,19 @@ type Props = {
 const Gallery: React.FC<Props> = (props) => {
   const galleries = data.gallery.category;
 
-  useEffect(() => {
-    const reveal = () => {
-      var reveals = document.querySelectorAll(".gallery__bloc");
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = -20;
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-        } else {
-          reveals[i].classList.remove("active");
-        }
+  const reveal = () => {
+    var reveals = document.querySelectorAll(".gallery__bloc");
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = -20;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
       }
-    };
+    }
+  };
+
+  useEffect(() => {
     window.addEventListener("scroll", reveal);
     reveal();
   }, []);
@@ -32,7 +31,12 @@ const Gallery: React.FC<Props> = (props) => {
     <>
       {galleries.map((gallery, indexGallery) => {
         return (
-          <div className="gallery" key={indexGallery}>
+          <div
+            className={`gallery ${
+              indexGallery % 2 !== 0 ? "gallery--second-color" : ""
+            }`}
+            key={indexGallery}
+          >
             <div className="gallery__name">{gallery.name}</div>
             <div className="gallery__content">
               {gallery.images.map((image, index) => {
