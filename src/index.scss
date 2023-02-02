@@ -11,7 +11,7 @@ body {
   font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
 }
 
-#app {
+.app {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -150,4 +150,11 @@ body {
   fill: #f1f1e6;
   margin: 10px 5px;
   cursor: pointer;
+}
+
+.close-button {
+  top: 0;
+  position: fixed;
+  left: 0;
+  z-index: 10000;
 }

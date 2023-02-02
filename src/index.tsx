@@ -1,18 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import App from "./App";
 
-import Header from "./Header";
-import Gallery from "./Gallery";
-import Footer from "./Footer";
-import "./index.css";
+import "./index.scss";
 
-const container = document.getElementById("app")!;
+const container = document.getElementById("root")!;
 const root = createRoot(container);
 
-root.render(
-  <>
-    <Header />
-    <Gallery />
-    <Footer />
-  </>
-);
+root.render(<App />);

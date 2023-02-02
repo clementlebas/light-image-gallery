@@ -20,8 +20,8 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
-      favicon: "./favicon.ico",
+      template: "public/index.html",
+      favicon: "public/favicon.ico",
     }),
     new MiniCssExtractPlugin(),
   ],

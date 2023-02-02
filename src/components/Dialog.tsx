@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
 
-import { data } from "./configs";
-import "./index.css";
+import { data } from "../configs";
+import "../style/dialog.scss";
+import "../index.scss";
 
 type Props = {
   image: string;
@@ -10,9 +11,8 @@ type Props = {
 
 const Dialog: React.FC<Props> = ({ image }) => {
   const allImageNames = data.gallery.category.reduce(
-    (acc: string[], currentCategory) => {
-      return acc.concat(currentCategory.images.map((img) => img.name));
-    },
+    (acc: string[], currentCategory) =>
+      acc.concat(currentCategory.images.map((img) => img.name)),
     []
   );
   const [currentImageIndex, setCurrentImageIndex] = useState(
@@ -43,7 +43,7 @@ const Dialog: React.FC<Props> = ({ image }) => {
       </button>
       <div className="dialog__image">
         <img
-          src={require(`./images/${allImageNames[currentImageIndex]}`)}
+          src={require(`../images/${allImageNames[currentImageIndex]}`)}
           alt="Dialog image"
         />
       </div>

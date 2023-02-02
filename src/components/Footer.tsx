@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Sun } from "./icons/icons";
-import "./index.css";
+import { Sun } from "../icons/icons";
+import "../index.scss";
 
 type Props = {
   // any props you want to pass to the component

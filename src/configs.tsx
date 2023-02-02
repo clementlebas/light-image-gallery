@@ -9,7 +9,7 @@ export const data = {
     title: "Hey, I'm Clément Le Bas.",
     description:
       "Welcome to my AI image gallery generated with MidJourney and Dall-e !",
-    image: "profile.png",
+    image: require("./profile.png"),
     disabled: false,
   },
   gallery: {

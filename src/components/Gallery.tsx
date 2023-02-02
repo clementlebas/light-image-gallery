@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 
 import Dialog from "./Dialog";
-import { data } from "./configs";
-import "./index.css";
+import { data } from "../configs";
+import "../index.scss";
 
 type Props = {
+  setIsDialogOpen: (a: boolean) => void;
   // any props you want to pass to the component
 };
 
-const Gallery: React.FC<Props> = (props) => {
+const Gallery: React.FC<Props> = ({ setIsDialogOpen }) => {
   const galleries = data.gallery.category;
   const [currentImage, setCurrentImage] = useState("");
+
+  console.log("currentImage", currentImage);
 
   const reveal = () => {
     var reveals = document.querySelectorAll(".gallery__bloc");
@@ -48,10 +51,13 @@ const Gallery: React.FC<Props> = (props) => {
                       index === 0 || index === 10 || index === 14 ? "large" : ""
                     }`}
                     key={index}
-                    onClick={() => setCurrentImage(image.name)}
+                    onClick={() => {
+                      setIsDialogOpen(true);
+                      setCurrentImage(image.name);
+                    }}
                   >
                     <img
-                      src={require(`./images/${image.name}`)}
+                      src={require(`../images/${image.name}`)}
                       alt="Not Found"
                       className="gallery__img"
                       // TODO: handle onerror when image not found
@@ -66,6 +72,7 @@ const Gallery: React.FC<Props> = (props) => {
           </div>
         );
       })}
+
       <Dialog image={currentImage} />
     </>
   );
