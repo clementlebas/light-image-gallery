@@ -20,7 +20,7 @@ export type Category = {
 };
 
 export type Image = {
-  source?: string;
+  name?: string;
   description?: string;
 };
 

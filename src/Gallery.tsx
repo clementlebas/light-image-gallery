@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
+import Dialog from "./Dialog";
 import { data } from "./configs";
 import "./index.css";
 
@@ -9,6 +10,7 @@ type Props = {
 
 const Gallery: React.FC<Props> = (props) => {
   const galleries = data.gallery.category;
+  const [currentImage, setCurrentImage] = useState("");
 
   const reveal = () => {
     var reveals = document.querySelectorAll(".gallery__bloc");
@@ -46,6 +48,7 @@ const Gallery: React.FC<Props> = (props) => {
                       index === 0 || index === 10 || index === 14 ? "large" : ""
                     }`}
                     key={index}
+                    onClick={() => setCurrentImage(image.name)}
                   >
                     <img
                       src={require(`./images/${image.name}`)}
@@ -63,6 +66,7 @@ const Gallery: React.FC<Props> = (props) => {
           </div>
         );
       })}
+      <Dialog image={currentImage} />
     </>
   );
 };
