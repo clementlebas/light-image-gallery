@@ -1,3 +1,9 @@
+export const social = {
+  github: "https://github.com/clementlebas",
+  twitter: "https://twitter.com/clemitodev",
+  linkedin: "https://www.linkedin.com/in/clement-lebas/",
+};
+
 export const data = {
   header: {
     title: "Hey, I'm Clément Le Bas.",

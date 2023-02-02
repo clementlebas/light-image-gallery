@@ -1,6 +1,7 @@
 import React from "react";
 
 import { data } from "./configs";
+import { Github, Twitter, Linkedin } from "./icons/icons";
 import "./index.css";
 
 type Props = {
@@ -11,14 +12,20 @@ const Header: React.FC<Props> = (props) => {
   const pathImage = "./" + data.header.image;
 
   if (data.header.disabled) return null;
-  // TODO: resosle why we can't load pathImage in img
   return (
     <div className="header">
       <div className="header__content">
-        <img src={require(`${pathImage}`)} className="header__img" />
-        <div className="header__text">
-          <div className="header__title">{data.header.title}</div>
-          <div className="header__description">{data.header.description}</div>
+        <div className="header__profile">
+          <img src={require(`${pathImage}`)} className="header__img" />
+          <div className="header__text">
+            <div className="header__title">{data.header.title}</div>
+            <div className="header__description">{data.header.description}</div>
+          </div>
+        </div>
+        <div>
+          <Github />
+          <Twitter />
+          <Linkedin />
         </div>
       </div>
     </div>

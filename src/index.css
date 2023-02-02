@@ -26,12 +26,6 @@ body {
   margin-bottom: 2px;
 }
 
-.header,
-.footer {
-  position: fixed;
-  font-size: 16px;
-}
-
 .header__content,
 .footer__content {
   width: 50%;
@@ -45,6 +39,13 @@ body {
 }
 
 .header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.header__profile {
   display: flex;
   align-items: center;
 }
@@ -72,7 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 120px;
+  padding: 70px 0;
 }
 
 .gallery--second-color {
@@ -130,7 +131,10 @@ body {
   display: flex;
   justify-content: center;
   height: fit-content;
+  position: fixed;
+  font-size: 16px;
 }
+
 .footer {
   bottom: 0;
   background-color: #001a2c;
@@ -140,4 +144,10 @@ body {
   display: flex;
   justify-content: end;
   align-items: center;
+}
+
+.icons {
+  fill: #f1f1e6;
+  margin: 10px 5px;
+  cursor: pointer;
 }
