@@ -9,15 +9,13 @@ type Props = {
 
 const Header: React.FC<Props> = (props) => {
   const pathImage = "./" + data.header.image;
-  console.log("pathImage", pathImage);
 
   if (data.header.disabled) return null;
   // TODO: resosle why we can't load pathImage in img
   return (
     <div className="header">
       <div className="header__content">
-        <img src={require(`./profile.png`)} className="header__img" />
-        {/* <img src={require(`${pathImage}`)} className="header__img" /> */}
+        <img src={require(`${pathImage}`)} className="header__img" />
         <div className="header__text">
           <div className="header__title">{data.header.title}</div>
           <div className="header__description">{data.header.description}</div>
