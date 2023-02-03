@@ -19,7 +19,8 @@ export const data = {
         images: [
           {
             name: "image (19).png",
-            description: "",
+            description:
+              "Prompt: circular logo, new technology, laptop, Pixel Art, outrun colors",
           },
           {
             name: "image (2).png",
@@ -27,59 +28,59 @@ export const data = {
           },
           {
             name: "image (3).png",
-            description: "",
+            description: "Prompt: image (3)",
           },
           {
             name: "image (4).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (5).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (6).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (7).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (8).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (9).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (10).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (11).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (12).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (13).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (14).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (15).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (16).png",
-            description: "",
+            description: "Prompt: ",
           },
         ],
         params: {
@@ -92,55 +93,55 @@ export const data = {
         images: [
           {
             name: "image (17).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (18).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (1).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (20).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (21).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (22).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (23).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (24).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (25).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (26).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (27).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (28).png",
-            description: "",
+            description: "Prompt: ",
           },
           {
             name: "image (29).png",
-            description: "",
+            description: "Prompt: ",
           },
         ],
         params: {

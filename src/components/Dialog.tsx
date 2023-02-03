@@ -16,14 +16,20 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
       acc.concat(currentCategory.images.map((img) => img.name)),
     []
   );
+  const allImageDesriptions = data.gallery.category.reduce(
+    (acc: string[], currentCategory) =>
+      acc.concat(currentCategory.images.map((img) => img.description)),
+    []
+  );
   const [currentImageIndex, setCurrentImageIndex] = useState(
     !image ? -1 : allImageNames.indexOf(image) + 1
   );
 
   useMemo(() => {
-    // if (!image) {
-    //   setCurrentImageIndex(-1);
-    // }
+    if (!image) {
+      setCurrentImageIndex(-1);
+    }
+
     setCurrentImageIndex(allImageNames.indexOf(image));
   }, [image]);
 
@@ -56,6 +62,13 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
           }
           alt="Dialog image"
         />
+      </div>
+      <div
+        className={`dialog__description  ${
+          isDialogOpen ? "dialog__description--transition" : ""
+        }`}
+      >
+        {allImageDesriptions[currentImageIndex]}
       </div>
       <button
         className={`dialog__button ${

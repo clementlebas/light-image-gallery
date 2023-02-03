@@ -32,6 +32,25 @@
   box-shadow: 0 8px 8px -4px black;
 }
 
+.dialog__description {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  margin-top: 3%;
+  height: fit-content;
+  width: 30%;
+  padding: 5px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.dialog__description--transition {
+  opacity: 1;
+}
+
 .dialog__button {
   cursor: pointer;
   border: 0;
