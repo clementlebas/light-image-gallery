@@ -15,13 +15,15 @@ const App = () => {
 
   return (
     <div className="app">
-      {isDialogOpen ? (
-        <button className="back-button" onClick={() => setIsDialogOpen(false)}>
-          Close
-        </button>
-      ) : (
-        <Header />
-      )}
+      <button
+        className={`back-button ${
+          isDialogOpen ? "back-button--animation" : ""
+        }`}
+        onClick={() => setIsDialogOpen(false)}
+      >
+        Close
+      </button>
+      <Header className={isDialogOpen ? "header--animation" : ""} />
       <Gallery isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
       <Footer />
     </div>

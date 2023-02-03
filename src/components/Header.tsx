@@ -5,15 +5,15 @@ import { Github, Twitter, Linkedin } from "../icons/icons";
 import "../index.scss";
 
 type Props = {
-  // any props you want to pass to the component
+  className: string;
 };
 
-const Header: React.FC<Props> = (props) => {
+const Header: React.FC<Props> = ({ className }) => {
   const pathImage = data.header.image;
 
   if (data.header.disabled) return null;
   return (
-    <div className="header">
+    <div className={`header ${className}`}>
       <div className="header__content">
         <div className="header__profile">
           <img src={pathImage} className="header__img" />

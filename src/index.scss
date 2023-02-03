@@ -68,6 +68,32 @@ body {
   font-size: 12px;
 }
 
+.header--animation {
+  animation: exit-down-up 0.5s forwards;
+}
+
+@keyframes exit-down-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.back-button--animation {
+  animation: exit-up-down 0.5s forwards;
+}
+
+@keyframes exit-up-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .gallery {
   display: flex;
   flex-direction: column;
@@ -190,4 +216,5 @@ body {
   background-color: transparent;
   border: 0;
   color: #f1f1e6;
+  transform: translateY(-100%);
 }
