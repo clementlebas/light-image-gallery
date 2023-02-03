@@ -82,6 +82,9 @@ body {
 }
 
 .back-button {
+  display: flex;
+  align-items: center;
+  width: 5%;
   top: 0;
   left: 0;
   position: fixed;
@@ -92,6 +95,19 @@ body {
   border: 0;
   color: #f1f1e6;
   transform: translateY(-100%);
+}
+
+.back-button:hover {
+  background-color: #002137;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.back-button__arrow {
+  fill: #f1f1e6;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
 }
 
 .back-button--animation {
