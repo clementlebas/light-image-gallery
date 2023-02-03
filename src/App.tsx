@@ -8,15 +8,21 @@ import "./index.scss";
 
 const App = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  //   const [currentImage, setCurrentImage] = useState("");
 
-  console.log("isDialogOpen", isDialogOpen);
+  const body = document.querySelector("body")!;
+  if (isDialogOpen) body.style.overflow = "hidden";
+  else body.style.overflow = "visible";
 
   return (
     <div className="app">
-      <Header />
-      <button className="close-button">Close</button>
-      <Gallery setIsDialogOpen={setIsDialogOpen} />
+      {isDialogOpen ? (
+        <button className="back-button" onClick={() => setIsDialogOpen(false)}>
+          Close
+        </button>
+      ) : (
+        <Header />
+      )}
+      <Gallery isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
       <Footer />
     </div>
   );

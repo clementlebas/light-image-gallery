@@ -15,7 +15,6 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid red;
   border: 0;
   padding: 20px 0;
 }
@@ -103,7 +102,36 @@ body {
   transition: padding 0.2s ease;
   transform: translateY(150px);
   opacity: 0;
-  transition: 0.2s all ease;
+  transition: 0.2s transform ease;
+}
+
+.gallery__bloc--animation:nth-child(5n),
+.gallery__bloc--animation:nth-child(5n-1) {
+  animation: exit-right-left 1.5s forwards;
+}
+
+@keyframes exit-right-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-3000%);
+  }
+}
+
+.gallery__bloc--animation:nth-child(5n-4),
+.gallery__bloc--animation:nth-child(5n-3),
+.gallery__bloc--animation:nth-child(5n-2) {
+  animation: exit-left-right 1.5s forwards;
+}
+
+@keyframes exit-left-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(3000%);
+  }
 }
 
 .gallery__bloc:hover {
@@ -152,9 +180,14 @@ body {
   cursor: pointer;
 }
 
-.close-button {
+.back-button {
   top: 0;
-  position: fixed;
   left: 0;
+  position: fixed;
   z-index: 10000;
+  padding: 30px 100px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  color: #f1f1e6;
 }

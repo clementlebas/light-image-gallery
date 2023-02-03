@@ -6,12 +6,25 @@
   display: flex;
   justify-content: space-between;
   margin: 5% 0;
+  transition: visibility 0.1s ease-out;
+  visibility: hidden;
+}
+
+.dialog--visible {
+  visibility: visible;
 }
 
 .dialog__image {
   display: flex;
   justify-content: center;
   width: 25%;
+  transition: transform 0.2s ease-in;
+  transform: scale(0);
+}
+
+.dialog__image--transition {
+  transition: transform 0.2s ease-out;
+  transform: scale(1);
 }
 
 .dialog__image > img {
@@ -25,6 +38,7 @@
   background-color: transparent;
   width: 100%;
   border-radius: 10px;
+  z-index: 20000;
 }
 
 .dialog__arrow {

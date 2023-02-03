@@ -5,11 +5,12 @@ import "../style/dialog.scss";
 import "../index.scss";
 
 type Props = {
+  isDialogOpen: boolean;
   image: string;
   // any props you want to pass to the component
 };
 
-const Dialog: React.FC<Props> = ({ image }) => {
+const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   const allImageNames = data.gallery.category.reduce(
     (acc: string[], currentCategory) =>
       acc.concat(currentCategory.images.map((img) => img.name)),
@@ -20,13 +21,14 @@ const Dialog: React.FC<Props> = ({ image }) => {
   );
 
   useMemo(() => {
-    if (!image) return;
+    // if (!image) {
+    //   setCurrentImageIndex(-1);
+    // }
     setCurrentImageIndex(allImageNames.indexOf(image));
   }, [image]);
 
-  if (currentImageIndex === -1) return null;
   return (
-    <div className="dialog">
+    <div className={`dialog ${isDialogOpen ? "dialog--visible" : ""}`}>
       <button
         className={`dialog__button ${
           currentImageIndex === 0 ? "dialog__button--disabled" : ""
@@ -41,9 +43,17 @@ const Dialog: React.FC<Props> = ({ image }) => {
       >
         <i className="dialog__arrow dialog__left" />
       </button>
-      <div className="dialog__image">
+      <div
+        className={`dialog__image  ${
+          isDialogOpen ? "dialog__image--transition" : ""
+        }`}
+      >
         <img
-          src={require(`../images/${allImageNames[currentImageIndex]}`)}
+          src={
+            allImageNames[currentImageIndex]
+              ? require(`../images/${allImageNames[currentImageIndex]}`)
+              : ""
+          }
           alt="Dialog image"
         />
       </div>

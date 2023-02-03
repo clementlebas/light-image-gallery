@@ -5,11 +5,12 @@ import { data } from "../configs";
 import "../index.scss";
 
 type Props = {
+  isDialogOpen: boolean;
   setIsDialogOpen: (a: boolean) => void;
   // any props you want to pass to the component
 };
 
-const Gallery: React.FC<Props> = ({ setIsDialogOpen }) => {
+const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
   const galleries = data.gallery.category;
   const [currentImage, setCurrentImage] = useState("");
 
@@ -30,7 +31,7 @@ const Gallery: React.FC<Props> = ({ setIsDialogOpen }) => {
   useEffect(() => {
     window.addEventListener("scroll", reveal);
     reveal();
-  }, []);
+  }, [isDialogOpen]);
 
   return (
     <>
@@ -42,14 +43,16 @@ const Gallery: React.FC<Props> = ({ setIsDialogOpen }) => {
             }`}
             key={indexGallery}
           >
-            <div className="gallery__name">{gallery.name}</div>
+            {!isDialogOpen && (
+              <div className="gallery__name">{gallery.name}</div>
+            )}
             <div className="gallery__content">
               {gallery.images.map((image, index) => {
                 return (
                   <div
                     className={`gallery__bloc ${
                       index === 0 || index === 10 || index === 14 ? "large" : ""
-                    }`}
+                    } ${isDialogOpen ? "gallery__bloc--animation" : ""}`}
                     key={index}
                     onClick={() => {
                       setIsDialogOpen(true);
@@ -72,8 +75,7 @@ const Gallery: React.FC<Props> = ({ setIsDialogOpen }) => {
           </div>
         );
       })}
-
-      <Dialog image={currentImage} />
+      <Dialog isDialogOpen={isDialogOpen} image={currentImage} />
     </>
   );
 };
