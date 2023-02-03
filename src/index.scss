@@ -81,6 +81,19 @@ body {
   }
 }
 
+.back-button {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100000;
+  padding: 30px 100px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  color: #f1f1e6;
+  transform: translateY(-100%);
+}
+
 .back-button--animation {
   animation: exit-up-down 0.5s forwards;
 }
@@ -204,17 +217,4 @@ body {
   fill: #f1f1e6;
   margin: 10px 5px;
   cursor: pointer;
-}
-
-.back-button {
-  top: 0;
-  left: 0;
-  position: fixed;
-  z-index: 10000;
-  padding: 30px 100px;
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-  color: #f1f1e6;
-  transform: translateY(-100%);
 }

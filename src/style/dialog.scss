@@ -1,11 +1,10 @@
 .dialog {
   position: fixed;
-  width: 80%;
+  width: 100%;
   height: 80%;
   z-index: 10000;
   display: flex;
   justify-content: space-between;
-  margin: 5% 0;
   transition: visibility 0.1s ease-out;
   visibility: hidden;
 }
@@ -30,6 +29,7 @@
 .dialog__image > img {
   object-fit: cover;
   border-radius: 2px;
+  box-shadow: 0 8px 8px -4px black;
 }
 
 .dialog__button {
