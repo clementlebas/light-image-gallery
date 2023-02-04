@@ -38,7 +38,7 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
           <div
             className={`gallery ${
               indexGallery % 2 !== 0 ? "gallery--second-color" : ""
-            }`}
+            } ${indexGallery === 0 ? "gallery--first" : ""}`}
             key={indexGallery}
           >
             {!isDialogOpen && (

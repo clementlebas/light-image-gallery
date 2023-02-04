@@ -83,3 +83,14 @@
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .dialog__image {
+    width: 60%;
+  }
+
+  .dialog__image--transition {
+    transform: scale(0.5);
+  }
+}
