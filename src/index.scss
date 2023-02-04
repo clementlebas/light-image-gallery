@@ -148,6 +148,7 @@ body {
   grid-template-columns: repeat(5, 150px);
   gap: 15px;
   justify-content: center;
+  padding: 40px 0;
 }
 
 .large {
@@ -264,7 +265,7 @@ body {
     grid-template-columns: repeat(2, 150px);
   }
 
-  .dialog__image {
-    width: 80%;
+  .back-button {
+    width: 100vh;
   }
 }

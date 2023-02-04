@@ -82,6 +82,10 @@ export const data = {
             name: "image (16).png",
             description: "Prompt: ",
           },
+          {
+            name: "image (16).png",
+            description: "Prompt: ",
+          },
         ],
         params: {
           row: 1,
@@ -141,6 +145,10 @@ export const data = {
           },
           {
             name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
             description: "Prompt: ",
           },
         ],

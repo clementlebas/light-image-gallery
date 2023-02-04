@@ -9,9 +9,16 @@ import "./index.scss";
 const App = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
+  // Lock scroll navigation when dialog is open
   const body = document.querySelector("body")!;
-  if (isDialogOpen) body.style.overflow = "hidden";
-  else body.style.overflow = "visible";
+  const html = document.querySelector("html")!;
+  if (isDialogOpen) {
+    body.style.overflow = "hidden";
+    html.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "visible";
+    html.style.overflow = "visible";
+  }
 
   return (
     <div className="app">
