@@ -14,8 +14,6 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
   const galleries = data.gallery.category;
   const [currentImage, setCurrentImage] = useState("");
 
-  console.log("currentImage", currentImage);
-
   const reveal = () => {
     var reveals = document.querySelectorAll(".gallery__bloc");
     for (var i = 0; i < reveals.length; i++) {
@@ -59,14 +57,11 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
                       setCurrentImage(image.name);
                     }}
                   >
+                    <div className="gallery__img gallery__img--skeleton" />
                     <img
                       src={require(`../images/${image.name}`)}
-                      alt="Not Found"
                       className="gallery__img"
-                      // TODO: handle onerror when image not found
-                      // onError={({ currentTarget }) => {
-                      //   console.log("errrror");
-                      // }}
+                      loading="lazy"
                     />
                   </div>
                 );
