@@ -157,6 +157,1046 @@ export const data = {
           column: 4,
         },
       },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
+      {
+        name: "Gallery 2",
+        images: [
+          {
+            name: "image (17).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (18).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (1).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (20).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (21).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (22).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (23).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (24).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (26).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (27).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (28).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (29).png",
+            description: "Prompt: ",
+          },
+          {
+            name: "image (25).png",
+            description: "Prompt: ",
+          },
+        ],
+        params: {
+          row: 1,
+          column: 4,
+        },
+      },
     ],
   },
   backgroundColor: {
