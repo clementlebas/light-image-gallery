@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import Dialog from "./Dialog";
 import { data } from "../configs";
+import { useOnLoadImages } from "../useOnloadImages";
 import "../index.scss";
 
 type Props = {
@@ -13,7 +14,8 @@ type Props = {
 const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
   const galleries = data.gallery.category;
   const [currentImage, setCurrentImage] = useState("");
-  const [imgLoaded, setImgLoaded] = useState(false);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const imagesLoaded = useOnLoadImages(galleryRef);
 
   const reveal = () => {
     var reveals = document.querySelectorAll(".gallery__bloc");
@@ -27,19 +29,15 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
     }
   };
 
-  // Page has finished loading
   useEffect(() => {
-    window.onload = function () {
-      setImgLoaded(true);
-    };
     window.addEventListener("scroll", reveal);
     reveal();
-  }, [isDialogOpen, imgLoaded]);
+  }, [isDialogOpen, imagesLoaded]);
 
   return (
     <>
-      {!imgLoaded && (
-        <div className="gallery gallery--first" style={{ marginTop: "100px" }}>
+      {!imagesLoaded && (
+        <div className="gallery gallery--first" style={{ marginTop: "200px" }}>
           <div className="gallery__content">
             <div className="large">
               <div className="gallery__img--skeleton" />
@@ -90,19 +88,22 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
         {galleries.map((gallery, indexGallery) => {
           return (
             <div
+              ref={galleryRef}
               className={`gallery ${
                 indexGallery % 2 !== 0 ? "gallery--second-color" : ""
               } ${indexGallery === 0 ? "gallery--first" : ""}`}
               key={indexGallery}
             >
-              {!isDialogOpen && imgLoaded && (
+              {!isDialogOpen && imagesLoaded && (
                 <div className="gallery__name">{gallery.name}</div>
               )}
               <div className="gallery__content">
                 {gallery.images.map((image, index) => {
                   return (
                     <div
-                      style={{ visibility: imgLoaded ? "visible" : "hidden" }}
+                      style={{
+                        visibility: imagesLoaded ? "visible" : "hidden",
+                      }}
                       className={`gallery__bloc ${
                         index === 0 || index === 10 || index === 14
                           ? "large"
