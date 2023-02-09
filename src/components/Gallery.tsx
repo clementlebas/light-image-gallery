@@ -8,7 +8,6 @@ import "../index.scss";
 type Props = {
   isDialogOpen: boolean;
   setIsDialogOpen: (a: boolean) => void;
-  // any props you want to pass to the component
 };
 
 const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {

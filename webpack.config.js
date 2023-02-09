@@ -26,7 +26,7 @@ const config = {
     new MiniCssExtractPlugin(),
   ],
   performance: {
-    maxAssetSize: 1000000,
+    maxAssetSize: 100000000,
   },
   module: {
     rules: [
