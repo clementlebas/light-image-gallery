@@ -265,6 +265,16 @@ body {
   cursor: pointer;
 }
 
+.opacity-animation {
+  opacity: 1;
+  transition: 0.2s all ease-in-out;
+}
+
+.opacity-animation:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .header__content,
