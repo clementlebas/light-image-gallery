@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-import { data } from "../configs";
+import { galleries } from "../configs";
 import "../style/dialog.scss";
 import "../index.scss";
 
@@ -11,12 +11,12 @@ type Props = {
 };
 
 const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
-  const allImageNames = data.gallery.category.reduce(
+  const allImageNames = galleries.reduce(
     (acc: string[], currentCategory) =>
       acc.concat(currentCategory.images.map((img) => img.name)),
     []
   );
-  const allImageDesriptions = data.gallery.category.reduce(
+  const allImageDesriptions = galleries.reduce(
     (acc: string[], currentCategory) =>
       acc.concat(currentCategory.images.map((img) => img.description)),
     []

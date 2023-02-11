@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import Dialog from "./Dialog";
-import { data } from "../configs";
+import { galleries } from "../configs";
 import { useOnLoadImages } from "../useOnloadImages";
 import "../index.scss";
 
@@ -11,7 +11,6 @@ type Props = {
 };
 
 const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
-  const galleries = data.gallery.category;
   const [currentImage, setCurrentImage] = useState("");
   const galleryRef = useRef<HTMLDivElement>(null);
   const imagesLoaded = useOnLoadImages(galleryRef);
