@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import Dialog from "./Dialog";
+import GallerySkeleton from "./GallerySkeleton";
 import { galleries } from "../configs";
 import { useOnLoadImages } from "../useOnloadImages";
 import "../index.scss";
@@ -34,54 +35,7 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
 
   return (
     <>
-      {!imagesLoaded && (
-        <div className="gallery gallery--first" style={{ marginTop: "200px" }}>
-          <div className="gallery__content">
-            <div className="large">
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div className="large">
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-            <div>
-              <div className="gallery__img--skeleton" />
-            </div>
-          </div>
-        </div>
-      )}
+      {!imagesLoaded && <GallerySkeleton />}
       <>
         {galleries.map((gallery, indexGallery) => {
           return (
