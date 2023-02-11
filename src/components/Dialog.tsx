@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-import { galleries } from "../configs";
+import { galleries } from "../configs/data";
 import "../style/dialog.scss";
 import "../index.scss";
 
@@ -16,11 +16,13 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
       acc.concat(currentCategory.images.map((img) => img.name)),
     []
   );
+
   const allImageDesriptions = galleries.reduce(
     (acc: string[], currentCategory) =>
       acc.concat(currentCategory.images.map((img) => img.description)),
     []
   );
+
   const [currentImageIndex, setCurrentImageIndex] = useState(
     !image ? -1 : allImageNames.indexOf(image) + 1
   );

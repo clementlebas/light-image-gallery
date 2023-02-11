@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 
 import Dialog from "./Dialog";
 import GallerySkeleton from "./GallerySkeleton";
-import { galleries } from "../configs";
+import { galleries } from "../configs/data";
 import { useOnLoadImages } from "../useOnloadImages";
 import "../index.scss";
 

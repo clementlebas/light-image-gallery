@@ -1,6 +1,6 @@
 import React from "react";
 
-import { header } from "../configs";
+import { header } from "../configs/data";
 import { Github, Twitter, Linkedin } from "../icons/icons";
 import "../index.scss";
 

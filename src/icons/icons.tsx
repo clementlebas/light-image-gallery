@@ -1,6 +1,6 @@
 import React from "react";
 
-import { social } from "../configs";
+import { social } from "../configs/data";
 
 export const Github = () => (
   <a href={social.github} target="_blank" rel="noreferrer">
