@@ -4,14 +4,23 @@ import { Sun } from "../icons/icons";
 import "../index.scss";
 
 type Props = {
+  isDarkMode: boolean;
+  setIsDarkMode: (a: boolean) => void;
   // any props you want to pass to the component
 };
 
-const Footer: React.FC<Props> = (props) => {
+const Footer: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
   return (
     <div className="footer">
       <div className="footer__content">
-        <Sun />
+        <div
+          onClick={() => {
+            localStorage.setItem("mode", isDarkMode ? "light" : "dark");
+            setIsDarkMode(!isDarkMode);
+          }}
+        >
+          <Sun />
+        </div>
       </div>
     </div>
   );

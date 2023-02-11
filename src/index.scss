@@ -1,14 +1,18 @@
 /* Palette colors https://coolors.co/palette/00111c-001523-001a2c-002137-00253e-002945-002e4e-003356-003a61-00406c */
 
+@import url("./configs/colors.scss");
+
 html,
 body {
   margin: 0;
 }
 
-body {
-  background-color: #001a2c;
-  color: #f1f1e6;
+.app {
+  background-color: var(--color-primary);
+  color: var(--color-text);
   font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+  font-weight: 500;
+  // height: 100%;
 }
 
 .app {
@@ -34,7 +38,7 @@ body {
 .header {
   top: 0;
   z-index: 100;
-  background-color: #002137;
+  background-color: var(--color-secondary);
 }
 
 .header__content {
@@ -65,7 +69,7 @@ body {
 }
 
 .header__description {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .header--animation {
@@ -94,18 +98,19 @@ body {
   cursor: pointer;
   background-color: transparent;
   border: 0;
-  color: #f1f1e6;
+  color: var(--color-text);
   transform: translateY(-100%);
+  margin: 5px;
 }
 
 .back-button:hover {
-  background-color: #002137;
+  background-color: lightslategray;
   border-radius: 5px;
-  opacity: 0.9;
+  opacity: 0.2;
 }
 
 .back-button__arrow {
-  fill: #f1f1e6;
+  fill: var(--color-text);
   width: 15px;
   height: 15px;
   margin-right: 10px;
@@ -135,7 +140,7 @@ body {
 }
 
 .gallery--second-color {
-  background-color: #002137;
+  background-color: var(--color-secondary);
 }
 
 .gallery__name {
@@ -212,10 +217,19 @@ body {
   width: 100%;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
     0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(0.25turn, transparent, #001a2c, transparent),
-    linear-gradient(#002137, #002137),
-    radial-gradient(38px circle at 19px 19px, #002137 50%, transparent 51%),
-    linear-gradient(#002137, #002137);
+  background: linear-gradient(
+      0.25turn,
+      transparent,
+      var(--color-primary),
+      transparent
+    ),
+    linear-gradient(var(--color-secondary), var(--color-secondary)),
+    radial-gradient(
+      38px circle at 19px 19px,
+      var(--color-secondary) 50%,
+      transparent 51%
+    ),
+    linear-gradient(var(--color-secondary), var(--color-secondary));
   background-repeat: no-repeat;
   background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
   animation: loading 1s infinite;
@@ -245,12 +259,12 @@ body {
   justify-content: center;
   height: fit-content;
   position: fixed;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .footer {
   bottom: 0;
-  background-color: #001a2c;
+  background-color: var(--color-primary);
 }
 
 .footer__content {
@@ -260,7 +274,7 @@ body {
 }
 
 .icons {
-  fill: #f1f1e6;
+  fill: var(--color-text);
   margin: 10px 5px;
   cursor: pointer;
 }

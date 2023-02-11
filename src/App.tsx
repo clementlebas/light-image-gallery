@@ -9,6 +9,9 @@ import "./index.scss";
 
 const App = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("mode") !== "light"
+  );
 
   // Lock scroll navigation when dialog is open
   const body = document.querySelector("body")!;
@@ -22,7 +25,7 @@ const App = () => {
   }
 
   return (
-    <div className="app">
+    <div className={`app ${isDarkMode ? "dark" : "light"}`}>
       <div
         className={`back-button ${
           isDialogOpen ? "back-button--animation" : ""
@@ -33,7 +36,7 @@ const App = () => {
       </div>
       <Header className={isDialogOpen ? "header--animation" : ""} />
       <Gallery isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
-      <Footer />
+      <Footer isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
     </div>
   );
 };
