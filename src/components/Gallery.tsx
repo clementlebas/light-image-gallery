@@ -57,7 +57,9 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
                         visibility: imagesLoaded ? "visible" : "hidden",
                       }}
                       className={`gallery__bloc ${
-                        index === 0 || index === 10 || index === 14
+                        index === 0 ||
+                        (index === 10 && gallery.images.length > 13) ||
+                        index === 14
                           ? "large"
                           : ""
                       } ${isDialogOpen ? "gallery__bloc--animation" : ""}`}
