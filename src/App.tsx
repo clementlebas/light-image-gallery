@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
-import { ArrowLeft } from "./icons/icons";
+import { Cross } from "./icons/icons";
 
 import "./index.scss";
 
@@ -32,7 +32,7 @@ const App = () => {
         }`}
         onClick={() => setIsDialogOpen(false)}
       >
-        <ArrowLeft />
+        <Cross />
       </div>
       <Header className={isDialogOpen ? "header--animation" : ""} />
       <Gallery isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
