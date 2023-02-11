@@ -18,6 +18,7 @@ const Footer: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
             localStorage.setItem("mode", isDarkMode ? "light" : "dark");
             setIsDarkMode(!isDarkMode);
           }}
+          style={{ display: "flex" }}
         >
           <Sun />
         </div>
