@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import { galleries } from "../configs/data";
 import "../style/dialog.scss";
@@ -11,6 +11,10 @@ type Props = {
 };
 
 const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [isLargeImg, setIsLargeImg] = useState(false);
+
   const allImageNames = galleries.reduce(
     (acc: string[], currentCategory) =>
       acc.concat(currentCategory.images.map((img) => img.name)),
@@ -35,8 +39,17 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
     setCurrentImageIndex(allImageNames.indexOf(image));
   }, [image]);
 
+  useEffect(() => {
+    if (imgRef.current?.width! && imgRef.current?.width! > 650)
+      setIsLargeImg(true);
+    else setIsLargeImg(false);
+  }, [currentImageIndex]);
+
   return (
-    <div className={`dialog ${isDialogOpen ? "dialog--visible" : ""}`}>
+    <div
+      ref={dialogRef}
+      className={`dialog ${isDialogOpen ? "dialog--visible" : ""}`}
+    >
       <button
         className={`dialog__button ${
           currentImageIndex === 0 ? "dialog__button--disabled" : ""
@@ -54,7 +67,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
       <div
         className={`dialog__image  ${
           isDialogOpen ? "dialog__image--transition" : ""
-        }`}
+        } ${isLargeImg ? "dialog__image--rescale" : ""}`}
       >
         <img
           src={
@@ -62,6 +75,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
               ? require(`../images/${allImageNames[currentImageIndex]}`)
               : ""
           }
+          ref={imgRef}
           alt="Dialog image"
         />
       </div>

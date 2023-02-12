@@ -88,11 +88,26 @@
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+
   .dialog__image {
-    width: 60%;
+    width: 0;
+  }
+
+  .dialog__description {
+    width: 80%;
+  }
+
+  .dialog__button {
+    align-self: end;
+    width: 100%;
+    padding: 50px 0;
   }
 
   .dialog__image--transition {
     transform: scale(0.5);
+  }
+
+  .dialog__image--rescale {
+    transform: scale(0.3) !important;
   }
 }

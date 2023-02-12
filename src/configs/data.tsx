@@ -22,7 +22,8 @@ export const galleries = [
       },
       {
         name: "image (2).png",
-        description: "",
+        description:
+          "Prompt: circular logo, new technology, laptop, Pixel Art, outrun colorsPrompt: circular logo, new technology, laptop, Pixel Art, outrun colors",
       },
       {
         name: "image (3).png",

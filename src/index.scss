@@ -298,13 +298,24 @@ body,
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+
+  .header {
+    position: absolute;
+  }
+
   .header__content,
   .header__profile {
     flex-direction: column;
+    width: 400px;
   }
 
   .header__text {
     text-align: center;
+  }
+
+  .header--animation {
+    animation: none;
+    transform: translateY(-100%);
   }
 
   .gallery--first {
@@ -316,7 +327,16 @@ body,
   }
 
   .back-button {
-    width: 100vh;
     justify-content: flex-end;
+    padding: 30px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer__content {
+    width: 60vh;
+  }
+  .footer__content > div {
+    padding: 10px 20px;
   }
 }
