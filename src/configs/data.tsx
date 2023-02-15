@@ -98,38 +98,6 @@ export const galleries = [
         name: "image (21).png",
         description: "Prompt: ",
       },
-      {
-        name: "image (22).png",
-        description: "Prompt: ",
-      },
-      {
-        name: "image (23).png",
-        description: "Prompt: ",
-      },
-      {
-        name: "image (24).png",
-        description: "Prompt: ",
-      },
-      {
-        name: "image (25).png",
-        description: "Prompt: ",
-      },
-      {
-        name: "image (26).png",
-        description: "Prompt: ",
-      },
-      {
-        name: "image (27).png",
-        description: "Prompt: ",
-      },
-      {
-        name: "image (28).png",
-        description: "Prompt: ",
-      },
-      {
-        name: "image (29).png",
-        description: "Prompt: ",
-      },
     ],
   },
 ];
