@@ -2,52 +2,15 @@ import React from "react";
 
 import "../index.scss";
 
-const GallerySkeleton: React.FC = () => {
+type Props = {
+  className: string;
+};
+
+const GallerySkeleton: React.FC<Props> = ({ className }) => {
   return (
-    <>
-      <div className="large">
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div className="large">
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-      <div>
-        <div className="gallery__img--skeleton" />
-      </div>
-    </>
+    <div className={className}>
+      <div className="gallery__img--skeleton" />
+    </div>
   );
 };
 
