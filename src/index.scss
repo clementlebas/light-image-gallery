@@ -177,6 +177,35 @@ body,
   transition: 0.2s transform ease;
 }
 
+.gallery__bloc--skeleton::before {
+  content: "";
+  display: block;
+  position: relative;
+  background: black;
+  z-index: -1;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
+    0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+      0.25turn,
+      transparent,
+      var(--color-primary),
+      transparent
+    ),
+    linear-gradient(var(--color-secondary), var(--color-secondary)),
+    radial-gradient(
+      38px circle at 19px 19px,
+      var(--color-secondary) 50%,
+      transparent 51%
+    ),
+    linear-gradient(var(--color-secondary), var(--color-secondary));
+  background-repeat: no-repeat;
+  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
+  animation: loading 1s infinite;
+}
+
 .gallery__bloc.active {
   transform: translateY(0);
   opacity: 1;
@@ -216,32 +245,6 @@ body,
   }
 }
 
-.gallery__img--skeleton {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
-    0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(
-      0.25turn,
-      transparent,
-      var(--color-primary),
-      transparent
-    ),
-    linear-gradient(var(--color-secondary), var(--color-secondary)),
-    radial-gradient(
-      38px circle at 19px 19px,
-      var(--color-secondary) 50%,
-      transparent 51%
-    ),
-    linear-gradient(var(--color-secondary), var(--color-secondary));
-  background-repeat: no-repeat;
-  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
-  animation: loading 1s infinite;
-}
-
 @keyframes loading {
   to {
     background-position: 315px 0, 0 0, 0 190px, 50px 195px;
@@ -257,14 +260,6 @@ body,
   width: 100%;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
     0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.gallery__bloc--visible {
-  visibility: visible;
-}
-
-.gallery__bloc--hidden {
-  visibility: hidden;
 }
 
 .header,

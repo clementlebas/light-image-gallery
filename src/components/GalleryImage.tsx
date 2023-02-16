@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
 import { useOnLoadImages } from "../useOnloadImages";
-import GallerySkeleton from "./GallerySkeleton";
 import { Image, Category } from "../types";
 import "../index.scss";
 
@@ -24,6 +23,7 @@ const GalleryImage: React.FC<Props> = ({
 }) => {
   const imageRef = useRef<HTMLDivElement>(null);
   const imageLoaded = useOnLoadImages(imageRef);
+  const imageSrc = require(`../images/${imageName}`);
 
   const reveal = () => {
     var reveals = document.querySelectorAll(".gallery__bloc");
@@ -43,40 +43,26 @@ const GalleryImage: React.FC<Props> = ({
     if (imageLoaded) {
       reveal();
     }
-  });
-
-  // console.log("imageLoaded", imageLoaded);
+  }, [imageLoaded]);
 
   return (
     <>
-      {!imageLoaded && (
-        <GallerySkeleton
-          className={`${
-            index === 0 || (index === 10 && galleryLenght > 13) || index === 14
-              ? "large"
-              : ""
-          } ${
-            imageLoaded ? "gallery__bloc--hidden" : "gallery__bloc--visible"
-          }`}
-        />
-      )}
       <div
         ref={imageRef}
-        style={{
-          visibility: imageLoaded ? "visible" : "hidden",
-        }}
         className={`gallery__bloc ${
           index === 0 || (index === 10 && galleryLenght > 13) || index === 14
             ? "large"
             : ""
-        } ${isDialogOpen ? "gallery__bloc--animation" : ""}`}
+        } ${isDialogOpen ? "gallery__bloc--animation" : ""} ${
+          !imageLoaded ? "gallery__bloc--skeleton" : ""
+        }`}
         key={index}
         onClick={() => {
           setIsDialogOpen(true);
           setCurrentImage(imageName);
         }}
       >
-        <img src={require(`../images/${imageName}`)} className="gallery__img" />
+        <img className="gallery__img" src={imageSrc} />
       </div>
     </>
   );
