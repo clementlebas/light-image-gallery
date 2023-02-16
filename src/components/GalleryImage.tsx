@@ -47,12 +47,16 @@ const GalleryImage: React.FC<Props> = ({
 
   useEffect(() => {
     window.addEventListener("scroll", reveal);
-
+    reveal();
     if (isLoad) {
+      const imageExist = document
+        .getElementById(`${imageName + index}`)
+        .hasChildNodes();
+
+      if (imageExist) return;
       document.getElementById(`${imageName + index}`).appendChild(image);
-      reveal();
     }
-  }, [isLoad]);
+  }, [isLoad, isDialogOpen]);
 
   console.log("isLoad", isLoad);
 
