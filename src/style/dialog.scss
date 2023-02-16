@@ -86,8 +86,12 @@
   -webkit-transform: rotate(135deg);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 834px) {
   /* For mobile phones: */
+
+  .dialog {
+    height: 90%;
+  }
 
   .dialog__image {
     width: 0;
@@ -104,10 +108,16 @@
   }
 
   .dialog__image--transition {
-    transform: scale(0.7);
+    transform: scale(0.5);
   }
 
-  .dialog__image--rescale {
-    transform: scale(0.5) !important;
+  .dialog__image--rescale-3 {
+    transform: scale(0.3) !important;
+  }
+  .dialog__image--rescale-4 {
+    transform: scale(0.4) !important;
+  }
+  .dialog__image--rescale-7 {
+    transform: scale(0.7) !important;
   }
 }

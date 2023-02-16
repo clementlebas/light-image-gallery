@@ -22,7 +22,7 @@ const Header: React.FC<Props> = ({ className }) => {
             <div className="header__description">{header.description}</div>
           </div>
         </div>
-        <div>
+        <div style={{ display: "flex" }}>
           <Github />
           <Twitter />
           <Linkedin />

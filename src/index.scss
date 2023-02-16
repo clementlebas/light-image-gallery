@@ -28,7 +28,7 @@ body,
 .header__content,
 .gallery__content {
   padding: 10px;
-  margin-bottom: 2px;
+  margin-bottom: 20px;
 }
 
 .header__content,
@@ -299,7 +299,14 @@ body,
   opacity: 0.6;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1210px) {
+  /* For tab : */
+  .gallery--first {
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 834px) {
   /* For mobile phones: */
 
   .header {
@@ -327,6 +334,11 @@ body,
 
   .gallery__content {
     grid-template-columns: repeat(2, 150px);
+  }
+
+  .gallery__bloc {
+    grid-column: auto/span 2;
+    grid-row: auto/span 2;
   }
 
   .back-button {

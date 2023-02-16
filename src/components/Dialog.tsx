@@ -13,7 +13,7 @@ type Props = {
 const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   const dialogRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
-  const [isLargeImg, setIsLargeImg] = useState(false);
+  const [resizeClass, setResizeClass] = useState("");
 
   const allImageNames = galleries.reduce(
     (acc: string[], currentCategory) =>
@@ -40,9 +40,20 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   }, [image]);
 
   useEffect(() => {
-    if (imgRef.current?.width! && imgRef.current?.width! > 650)
-      setIsLargeImg(true);
-    else setIsLargeImg(false);
+    if (imgRef.current?.width!) {
+      const x = imgRef.current?.width;
+      switch (true) {
+        case x < 500:
+          setResizeClass("dialog__image--rescale-7");
+          break;
+        case x < 721:
+          setResizeClass("dialog__image--rescale-4");
+          break;
+        default:
+          setResizeClass("dialog__image--rescale-3");
+          break;
+      }
+    }
   }, [currentImageIndex]);
 
   return (
@@ -67,7 +78,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
       <div
         className={`dialog__image  ${
           isDialogOpen ? "dialog__image--transition" : ""
-        } ${isLargeImg ? "dialog__image--rescale" : ""}`}
+        } ${resizeClass}`}
       >
         <img
           src={
