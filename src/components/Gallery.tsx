@@ -13,25 +13,6 @@ type Props = {
 const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
   const [currentImage, setCurrentImage] = useState("");
 
-  const reveal = () => {
-    var reveals = document.querySelectorAll(".gallery__bloc");
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = -20;
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("active");
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", reveal);
-    window.addEventListener("load", reveal);
-
-    reveal();
-  }, [isDialogOpen]);
-
   return (
     <>
       <>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import { useOnLoadImages } from "../useOnloadImages";
 import { Image, Category } from "../types";
@@ -23,6 +23,26 @@ const GalleryContent: React.FC<Props> = ({
 }) => {
   const galleryRef = useRef<HTMLDivElement>(null);
   const imagesLoaded = useOnLoadImages(galleryRef);
+
+  const reveal = () => {
+    var reveals = document.querySelectorAll(".gallery__bloc");
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = -20;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+    if (imagesLoaded) {
+      reveal();
+    }
+  }, [imagesLoaded]);
 
   return (
     <>
