@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useOnLoadImages } from "../useOnloadImages";
-import { Image, Category } from "../types";
+import { Image } from "../types";
 import "../index.scss";
 
 type Props = {
@@ -21,9 +20,18 @@ const GalleryImage: React.FC<Props> = ({
   setIsDialogOpen,
   setCurrentImage,
 }) => {
-  const imageRef = useRef<HTMLDivElement>(null);
-  const imageLoaded = useOnLoadImages(imageRef);
+  const [isLoad, setIsload] = useState(false);
   const imageSrc = require(`../images/${imageName}`);
+
+  const image = new Image();
+  image.addEventListener("load", () => {
+    const time = index === 0 ? 500 : 0;
+    setTimeout(() => {
+      setIsload(true);
+    }, time);
+  });
+  image.src = imageSrc;
+  image.className = "gallery__img";
 
   const reveal = () => {
     var reveals = document.querySelectorAll(".gallery__bloc");
@@ -39,32 +47,31 @@ const GalleryImage: React.FC<Props> = ({
 
   useEffect(() => {
     window.addEventListener("scroll", reveal);
-    window.addEventListener("load", reveal);
-    if (imageLoaded) {
+
+    if (isLoad) {
+      document.getElementById(`${imageName + index}`).appendChild(image);
       reveal();
     }
-  }, [imageLoaded]);
+  }, [isLoad]);
+
+  console.log("isLoad", isLoad);
 
   return (
-    <>
-      <div
-        ref={imageRef}
-        className={`gallery__bloc ${
-          index === 0 || (index === 10 && galleryLenght > 13) || index === 14
-            ? "large"
-            : ""
-        } ${isDialogOpen ? "gallery__bloc--animation" : ""} ${
-          !imageLoaded ? "gallery__bloc--skeleton" : ""
-        }`}
-        key={index}
-        onClick={() => {
-          setIsDialogOpen(true);
-          setCurrentImage(imageName);
-        }}
-      >
-        <img className="gallery__img" src={imageSrc} />
-      </div>
-    </>
+    <div
+      id={`${imageName + index}`}
+      className={`gallery__bloc ${
+        index === 0 || (index === 10 && galleryLenght > 13) || index === 14
+          ? "large"
+          : ""
+      } ${!isLoad ? "gallery__bloc--skeleton" : ""} ${
+        isDialogOpen ? "gallery__bloc--animation" : ""
+      } `}
+      key={index}
+      onClick={() => {
+        setIsDialogOpen(true);
+        setCurrentImage(imageName);
+      }}
+    />
   );
 };
 
