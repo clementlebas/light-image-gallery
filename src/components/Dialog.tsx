@@ -61,7 +61,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
         case x < 550:
           setResizeClass("dialog__image--rescale-7");
           break;
-        case x < 750:
+        case x < 800:
           setResizeClass("dialog__image--rescale-5");
           break;
         default:
