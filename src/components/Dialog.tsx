@@ -15,21 +15,6 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const [resizeClass, setResizeClass] = useState("");
 
-  const handleDownloadClick = () => {
-    const link = document.createElement("a");
-    const imageToDownload = allImageNames.filter((name, i) => {
-      if (i === currentImageIndex) {
-        return name;
-      }
-    });
-    const imageUrl = require(`../images/${imageToDownload[0]}`);
-    link.href = imageUrl;
-    link.download = imageToDownload[0];
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const allImageNames = galleries.reduce(
     (acc: string[], currentCategory) =>
       acc.concat(currentCategory.images.map((img) => img.name)),
@@ -71,6 +56,22 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
     }
   }, [currentImageIndex]);
 
+  let imageSrc: string;
+  try {
+    imageSrc = require(`../images/${allImageNames[currentImageIndex]}`);
+  } catch (e) {
+    console.log("Image source not found", allImageNames[currentImageIndex], e);
+  }
+
+  const handleDownloadClick = () => {
+    const link = document.createElement("a");
+    link.href = imageSrc;
+    link.download = allImageNames[currentImageIndex];
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div
       ref={dialogRef}
@@ -96,11 +97,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
         } ${resizeClass}`}
       >
         <img
-          src={
-            allImageNames[currentImageIndex]
-              ? require(`../images/${allImageNames[currentImageIndex]}`)
-              : ""
-          }
+          src={allImageNames[currentImageIndex] ? imageSrc : ""}
           ref={imgRef}
           alt="Not Found"
         />

@@ -20,9 +20,14 @@ const GalleryImage: React.FC<Props> = ({
   setIsDialogOpen,
   setCurrentImage,
 }) => {
-  const [isLoad, setIsload] = useState(false);
-  const imageSrc = require(`../images/${imageName}`);
+  let imageSrc;
+  try {
+    imageSrc = require(`../images/${imageName}`);
+  } catch (e) {
+    console.log("Image source not found", imageName, e);
+  }
 
+  const [isLoad, setIsload] = useState(false);
   const image = new Image();
   image.addEventListener("load", () => {
     const time = index === 0 ? 500 : 0;
@@ -58,6 +63,7 @@ const GalleryImage: React.FC<Props> = ({
     }
   }, [isLoad, isDialogOpen]);
 
+  if (!imageSrc) return null;
   return (
     <div
       id={`${imageName + index}`}

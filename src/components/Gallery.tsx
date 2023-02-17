@@ -17,6 +17,7 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
     if (!isDialogOpen) setCurrentImage("");
   }, [isDialogOpen]);
 
+  if (!galleries) return null;
   return (
     <>
       <>

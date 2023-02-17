@@ -20,6 +20,7 @@ const GalleryContent: React.FC<Props> = ({
   setIsDialogOpen,
   setCurrentImage,
 }) => {
+  if (!images) return null;
   return (
     <>
       {!isDialogOpen && <div className="gallery__name">{name}</div>}
