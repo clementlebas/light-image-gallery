@@ -6,13 +6,25 @@ import "../index.scss";
 type Props = {
   isDarkMode: boolean;
   setIsDarkMode: (a: boolean) => void;
-  // any props you want to pass to the component
+  isDialogOpen: boolean;
 };
 
-const Footer: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
+const Footer: React.FC<Props> = ({
+  isDarkMode,
+  setIsDarkMode,
+  isDialogOpen,
+}) => {
   return (
-    <div className="footer">
+    <div className={`footer ${isDialogOpen ? "footer--dialog-open" : ""}`}>
       <div className="footer__content">
+        <a
+          target="_blank"
+          href="https://github.com/clementlebas/light-photo-gallery"
+          className="footer__link"
+        >
+          Get your gallery
+          <div>&#xa0; &#8599;</div>
+        </a>
         <div
           onClick={() => {
             localStorage.setItem("mode", isDarkMode ? "light" : "dark");

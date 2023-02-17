@@ -36,7 +36,11 @@ const App = () => {
       </div>
       <Header className={isDialogOpen ? "header--animation" : ""} />
       <Gallery isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
-      <Footer isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Footer
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+        isDialogOpen={isDialogOpen}
+      />
     </div>
   );
 };

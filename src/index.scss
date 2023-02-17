@@ -283,8 +283,20 @@ body,
 
 .footer__content {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 10px;
+  padding: 10px 20px;
+  display: flex;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
 }
 
 .icons {
@@ -352,13 +364,14 @@ body,
     height: 48px;
   }
 
-  .footer {
+  .footer--dialog-open {
     visibility: hidden;
   }
 
   .footer__content {
     width: 60vh;
   }
+
   .footer__content > div {
     padding: 10px 20px;
   }
