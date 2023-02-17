@@ -1,19 +1,34 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import { galleries } from "../configs/data";
+import { Download } from "../icons/icons";
 import "../style/dialog.scss";
 import "../index.scss";
 
 type Props = {
   isDialogOpen: boolean;
   image: string;
-  // any props you want to pass to the component
 };
 
 const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   const dialogRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const [resizeClass, setResizeClass] = useState("");
+
+  const handleDownloadClick = () => {
+    const link = document.createElement("a");
+    const imageToDownload = allImageNames.filter((name, i) => {
+      if (i === currentImageIndex) {
+        return name;
+      }
+    });
+    const imageUrl = require(`../images/${imageToDownload[0]}`);
+    link.href = imageUrl;
+    link.download = imageToDownload[0];
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const allImageNames = galleries.reduce(
     (acc: string[], currentCategory) =>
@@ -95,7 +110,12 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
           isDialogOpen ? "dialog__description--transition" : ""
         }`}
       >
-        {allImageDesriptions[currentImageIndex]}
+        <div onClick={handleDownloadClick}>
+          <Download />
+        </div>
+        <div style={{ marginTop: "2px" }}>
+          {allImageDesriptions[currentImageIndex]}
+        </div>
       </div>
       <button
         className={`dialog__button ${

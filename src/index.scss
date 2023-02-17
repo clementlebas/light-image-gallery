@@ -121,6 +121,10 @@ body,
   margin-right: 10px;
 }
 
+.download-button {
+  margin: 0 !important;
+}
+
 .back-button--animation {
   animation: exit-up-down 0.5s forwards;
 }
@@ -346,6 +350,10 @@ body,
     padding: 30px;
     width: 48px;
     height: 48px;
+  }
+
+  .footer {
+    visibility: hidden;
   }
 
   .footer__content {
