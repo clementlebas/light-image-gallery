@@ -58,8 +58,6 @@ const GalleryImage: React.FC<Props> = ({
     }
   }, [isLoad, isDialogOpen]);
 
-  console.log("isLoad", isLoad);
-
   return (
     <div
       id={`${imageName + index}`}

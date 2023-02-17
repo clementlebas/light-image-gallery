@@ -28,21 +28,19 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   );
 
   const [currentImageIndex, setCurrentImageIndex] = useState(
-    !image ? -1 : allImageNames.indexOf(image) + 1
+    !image ? -1 : allImageNames.indexOf(image)
   );
 
   useMemo(() => {
     if (!image) {
       setCurrentImageIndex(-1);
     }
-
     setCurrentImageIndex(allImageNames.indexOf(image));
   }, [image]);
 
   useEffect(() => {
     if (imgRef.current?.width!) {
       const x = imgRef.current?.width;
-      console.log("x", x);
 
       switch (true) {
         case x < 550:
@@ -89,7 +87,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
               : ""
           }
           ref={imgRef}
-          alt="Dialog image"
+          alt="Not Found"
         />
       </div>
       <div

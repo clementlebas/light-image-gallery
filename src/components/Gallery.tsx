@@ -13,6 +13,10 @@ type Props = {
 const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
   const [currentImage, setCurrentImage] = useState("");
 
+  useEffect(() => {
+    if (!isDialogOpen) setCurrentImage("");
+  }, [isDialogOpen]);
+
   return (
     <>
       <>
