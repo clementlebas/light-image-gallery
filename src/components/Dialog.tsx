@@ -57,11 +57,16 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   }, [currentImageIndex]);
 
   let imageSrc: string;
-  try {
-    imageSrc = require(`../images/${allImageNames[currentImageIndex]}`);
-  } catch (e) {
-    console.log("Image source not found", allImageNames[currentImageIndex], e);
-  }
+  if (allImageNames[currentImageIndex])
+    try {
+      imageSrc = require(`../images/${allImageNames[currentImageIndex]}`);
+    } catch (e) {
+      console.log(
+        "Image source not found",
+        allImageNames[currentImageIndex],
+        e
+      );
+    }
 
   const handleDownloadClick = () => {
     const link = document.createElement("a");
@@ -77,53 +82,55 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
       ref={dialogRef}
       className={`dialog ${isDialogOpen ? "dialog--visible" : ""}`}
     >
-      <button
-        className={`dialog__button ${
-          currentImageIndex === 0 ? "dialog__button--disabled" : ""
-        }`}
-        onClick={() =>
-          setCurrentImageIndex(
-            currentImageIndex === 0
-              ? allImageNames.length - 1
-              : currentImageIndex - 1
-          )
-        }
-      >
-        <i className="dialog__arrow dialog__left" />
-      </button>
+      {isDialogOpen && (
+        <button
+          className={`dialog__button ${
+            currentImageIndex === 0 ? "dialog__button--disabled" : ""
+          }`}
+          onClick={() =>
+            setCurrentImageIndex(
+              currentImageIndex === 0
+                ? allImageNames.length - 1
+                : currentImageIndex - 1
+            )
+          }
+        >
+          <i className="dialog__arrow dialog__left" />
+        </button>
+      )}
       <div
         className={`dialog__image  ${
           isDialogOpen ? "dialog__image--transition" : ""
         } ${resizeClass}`}
       >
-        <img
-          src={allImageNames[currentImageIndex] ? imageSrc : ""}
-          ref={imgRef}
-          alt="Not Found"
-        />
+        {isDialogOpen && <img src={imageSrc ?? ""} ref={imgRef} />}
       </div>
-      <div
-        className={`dialog__description  ${
-          isDialogOpen ? "dialog__description--transition" : ""
-        }`}
-      >
-        <div onClick={handleDownloadClick}>
-          <Download />
+      {isDialogOpen && (
+        <div
+          className={`dialog__description  ${
+            isDialogOpen ? "dialog__description--transition" : ""
+          }`}
+        >
+          <div onClick={handleDownloadClick}>
+            <Download />
+          </div>
+          <div style={{ marginTop: "2px" }}>
+            {allImageDesriptions[currentImageIndex]}
+          </div>
         </div>
-        <div style={{ marginTop: "2px" }}>
-          {allImageDesriptions[currentImageIndex]}
-        </div>
-      </div>
-      <button
-        className={`dialog__button ${
-          currentImageIndex === allImageNames.length - 1
-            ? "dialog__button--disabled"
-            : ""
-        }`}
-        onClick={() => setCurrentImageIndex(currentImageIndex + 1)}
-      >
-        <i className="dialog__arrow dialog__right" />
-      </button>
+      )}
+      {isDialogOpen && (
+        <button
+          className={`dialog__button ${
+            currentImageIndex === allImageNames.length - 1
+              ? "dialog__button--disabled"
+              : ""
+          }`}
+          onClick={() => setCurrentImageIndex(currentImageIndex + 1)}
+        >
+          <i className="dialog__arrow dialog__right" />
+        </button>
+      )}
     </div>
   );
 };
