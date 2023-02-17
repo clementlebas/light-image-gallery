@@ -42,12 +42,14 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   useEffect(() => {
     if (imgRef.current?.width!) {
       const x = imgRef.current?.width;
+      console.log("x", x);
+
       switch (true) {
-        case x < 500:
+        case x < 550:
           setResizeClass("dialog__image--rescale-7");
           break;
-        case x < 721:
-          setResizeClass("dialog__image--rescale-4");
+        case x < 750:
+          setResizeClass("dialog__image--rescale-5");
           break;
         default:
           setResizeClass("dialog__image--rescale-3");
