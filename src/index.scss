@@ -257,8 +257,6 @@ body,
 
 .gallery__bloc > img {
   object-fit: cover;
-  height: 100%;
-  width: 100%;
   border-radius: 10px;
   height: 100%;
   width: 100%;
@@ -332,7 +330,7 @@ body,
   .header__content,
   .header__profile {
     flex-direction: column;
-    width: 400px;
+    width: 90%;
   }
 
   .header__text {

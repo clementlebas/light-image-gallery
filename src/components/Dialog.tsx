@@ -23,7 +23,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
 
   const allImageDesriptions = galleries.reduce(
     (acc: string[], currentCategory) =>
-      acc.concat(currentCategory.images.map((img) => img.description)),
+      acc.concat(currentCategory.images.map((img) => img.description ?? "")),
     []
   );
 
