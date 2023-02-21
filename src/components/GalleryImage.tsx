@@ -30,6 +30,7 @@ const GalleryImage: React.FC<Props> = ({
   const [isLoad, setIsload] = useState(false);
   const image = new Image();
   image.addEventListener("load", () => {
+    localStorage.setItem("scrollPosition", String(0));
     const time = index === 0 ? 500 : 0;
     setTimeout(() => {
       setIsload(true);

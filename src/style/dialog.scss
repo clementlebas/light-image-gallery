@@ -18,7 +18,7 @@
 .dialog__image-container {
   display: flex;
   justify-content: center;
-  // width: 50%;
+  width: 50%;
   transition: transform 0.2s ease-in;
   transform: scale(0);
 }
@@ -120,5 +120,13 @@
   }
   .dialog__image-container--rescale-7 {
     transform: scale(0.7) !important;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  .dialog__img {
+    object-fit: scale-down !important;
+    max-width: 100% !important;
   }
 }
