@@ -44,13 +44,13 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
 
       switch (true) {
         case x < 650:
-          setResizeClass("dialog__image--rescale-7");
+          setResizeClass("dialog__image-container--rescale-7");
           break;
         case x < 850:
-          setResizeClass("dialog__image--rescale-5");
+          setResizeClass("dialog__image-container--rescale-5");
           break;
         default:
-          setResizeClass("dialog__image--rescale-3");
+          setResizeClass("dialog__image-container--rescale-3");
           break;
       }
     }
@@ -99,11 +99,13 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
         </button>
       )}
       <div
-        className={`dialog__image  ${
-          isDialogOpen ? "dialog__image--transition" : ""
+        className={`dialog__image-container  ${
+          isDialogOpen ? "dialog__image-container--transition" : ""
         } ${resizeClass}`}
       >
-        {isDialogOpen && <img src={imageSrc ?? ""} ref={imgRef} />}
+        {isDialogOpen && (
+          <img className="dialog__img" src={imageSrc ?? ""} ref={imgRef} />
+        )}
       </div>
       {isDialogOpen && (
         <div

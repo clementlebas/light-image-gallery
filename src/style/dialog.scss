@@ -15,20 +15,20 @@
   visibility: visible;
 }
 
-.dialog__image {
+.dialog__image-container {
   display: flex;
   justify-content: center;
-  width: 50%;
+  // width: 50%;
   transition: transform 0.2s ease-in;
   transform: scale(0);
 }
 
-.dialog__image--transition {
+.dialog__image-container--transition {
   transition: transform 0.2s ease-out;
   transform: scale(1);
 }
 
-.dialog__image > img {
+.dialog__img {
   object-fit: contain;
   min-height: 100%;
   border-radius: 2px;
@@ -97,7 +97,7 @@
     height: 90%;
   }
 
-  .dialog__image {
+  .dialog__image-container {
     width: 0;
   }
 
@@ -112,13 +112,13 @@
     padding: 50px 0;
   }
 
-  .dialog__image--rescale-3 {
+  .dialog__image-container--rescale-3 {
     transform: scale(0.32) !important;
   }
-  .dialog__image--rescale-5 {
+  .dialog__image-container--rescale-5 {
     transform: scale(0.48) !important;
   }
-  .dialog__image--rescale-7 {
+  .dialog__image-container--rescale-7 {
     transform: scale(0.7) !important;
   }
 }
