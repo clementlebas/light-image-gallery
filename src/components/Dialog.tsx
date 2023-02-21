@@ -1,4 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  TouchEventHandler,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import { galleries } from "../configs/data";
 import { Download } from "../icons/icons";
@@ -37,6 +43,41 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
     }
     setCurrentImageIndex(allImageNames.indexOf(image));
   }, [image]);
+
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // the required distance between touchStart and touchEnd to be detected as a swipe
+  const minSwipeDistance = 50;
+
+  const swipeLeft = () => {
+    if (currentImageIndex === 0) return;
+    setCurrentImageIndex(
+      currentImageIndex === 0 ? allImageNames.length - 1 : currentImageIndex - 1
+    );
+  };
+  const swipeRight = () => {
+    if (currentImageIndex === allImageNames.length - 1) return;
+    setCurrentImageIndex(currentImageIndex + 1);
+  };
+
+  const onTouchStart: TouchEventHandler<HTMLDivElement> = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove: TouchEventHandler<HTMLDivElement> = (e) =>
+    setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe || isRightSwipe)
+      if (isLeftSwipe) swipeRight();
+      else swipeLeft();
+  };
 
   useEffect(() => {
     if (imgRef.current?.width!) {
@@ -81,19 +122,16 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
     <div
       ref={dialogRef}
       className={`dialog ${isDialogOpen ? "dialog--visible" : ""}`}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       {isDialogOpen && (
         <button
           className={`dialog__button ${
             currentImageIndex === 0 ? "dialog__button--disabled" : ""
           }`}
-          onClick={() =>
-            setCurrentImageIndex(
-              currentImageIndex === 0
-                ? allImageNames.length - 1
-                : currentImageIndex - 1
-            )
-          }
+          onClick={swipeLeft}
         >
           <i className="dialog__arrow dialog__left" />
         </button>
@@ -128,7 +166,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
               ? "dialog__button--disabled"
               : ""
           }`}
-          onClick={() => setCurrentImageIndex(currentImageIndex + 1)}
+          onClick={swipeRight}
         >
           <i className="dialog__arrow dialog__right" />
         </button>
