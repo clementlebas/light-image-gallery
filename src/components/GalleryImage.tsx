@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import { Image } from "../types";
 import "../index.scss";
@@ -40,10 +40,12 @@ const GalleryImage: React.FC<Props> = ({
 
   const reveal = () => {
     var reveals = document.querySelectorAll(".gallery__bloc");
+
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
       var elementVisible = -20;
+
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("active");
       }
@@ -73,9 +75,13 @@ const GalleryImage: React.FC<Props> = ({
           : ""
       } ${!isLoad ? "gallery__bloc--skeleton" : ""} ${
         isDialogOpen ? "gallery__bloc--animation" : ""
-      } `}
+      }`}
       key={index}
       onClick={() => {
+        localStorage.setItem(
+          "scrollPostion",
+          String(document.documentElement.scrollTop || document.body.scrollTop)
+        );
         setIsDialogOpen(true);
         setCurrentImage(imageName);
       }}

@@ -29,7 +29,7 @@
 }
 
 .dialog__image > img {
-  object-fit: cover;
+  object-fit: contain;
   min-height: 100%;
   border-radius: 2px;
   box-shadow: 0 8px 8px -4px black;

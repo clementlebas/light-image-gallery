@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
-import { Cross } from "./icons/icons";
 
 import "./index.scss";
 
@@ -22,18 +21,12 @@ const App = () => {
   } else {
     body.style.overflow = "visible";
     html.style.overflow = "visible";
+    body.scrollTo(0, Number(localStorage.getItem("scrollPostion")) ?? 0);
+    html.scrollTo(0, Number(localStorage.getItem("scrollPostion")) ?? 0);
   }
 
   return (
-    <div className={`app ${isDarkMode ? "dark" : "light"}`}>
-      <div
-        className={`back-button ${
-          isDialogOpen ? "back-button--animation" : ""
-        }`}
-        onClick={() => setIsDialogOpen(false)}
-      >
-        <Cross />
-      </div>
+    <div className={`app ${isDarkMode ? "dark" : "light"}`} id="app">
       <Header className={isDialogOpen ? "header--animation" : ""} />
       <Gallery isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
       <Footer

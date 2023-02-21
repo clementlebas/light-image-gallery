@@ -15,8 +15,12 @@ const Footer: React.FC<Props> = ({
   isDialogOpen,
 }) => {
   return (
-    <div className={`footer ${isDialogOpen ? "footer--dialog-open" : ""}`}>
-      <div className="footer__content">
+    <div className="footer">
+      <div
+        className={`footer__content ${
+          isDialogOpen ? "footer--dialog-open" : ""
+        }`}
+      >
         <a
           target="_blank"
           href="https://github.com/clementlebas/light-photo-gallery"

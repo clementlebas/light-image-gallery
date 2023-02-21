@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 import Dialog from "./Dialog";
 import GalleryContent from "./GalleryContent";
 import { galleries } from "../configs/data";
+import { Cross } from "../icons/icons";
 import "../index.scss";
 
 type Props = {
@@ -20,6 +21,14 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
   if (!galleries) return null;
   return (
     <>
+      <div
+        className={`back-button ${
+          isDialogOpen ? "back-button--animation" : ""
+        }`}
+        onClick={() => setIsDialogOpen(false)}
+      >
+        <Cross />
+      </div>
       <>
         {galleries.map((gallery, indexGallery) => {
           return (
