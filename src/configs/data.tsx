@@ -1,17 +1,20 @@
-export const header = {
+import { Header, Social, Galleries } from "../types";
+
+export const header: Header = {
   title: "Hey, I'm Clément Le Bas.",
   description: "Welcome to my AI image gallery generated with MidJourney !",
   image: require("./profile.png"),
   disabled: false,
 };
 
-export const social = {
+export const social: Social = {
   github: "https://github.com/clementlebas",
   twitter: "https://twitter.com/clemitodev",
   linkedin: "https://www.linkedin.com/in/clement-lebas/",
+  disabled: false,
 };
 
-export const galleries = [
+export const galleries: Galleries = [
   {
     name: "Gallery 1",
     images: [

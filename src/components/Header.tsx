@@ -1,6 +1,6 @@
 import React from "react";
 
-import { header } from "../configs/data";
+import { header, social } from "../configs/data";
 import { Github, Twitter, Linkedin } from "../icons/icons";
 import "../index.scss";
 
@@ -18,15 +18,17 @@ const Header: React.FC<Props> = ({ className }) => {
         <div className="header__profile">
           <img src={pathImage} className="header__img" />
           <div className="header__text">
-            <div className="header__title">{header.title}</div>
-            <div className="header__description">{header.description}</div>
+            <div className="header__title">{header?.title}</div>
+            <div className="header__description">{header?.description}</div>
           </div>
         </div>
-        <div style={{ display: "flex" }}>
-          <Github />
-          <Twitter />
-          <Linkedin />
-        </div>
+        {!social.disabled && (
+          <div style={{ display: "flex" }}>
+            {social.github && <Github />}
+            {social.twitter && <Twitter />}
+            {social.linkedin && <Linkedin />}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,37 +1,25 @@
-export type Data = {
-  header?: Header;
-  gallery?: Gallery;
-  backgroundColor?: BackgroundColor;
+export type Header = {
+  title?: string;
+  description?: string;
+  image?: string;
+  disabled: boolean;
 };
 
-export type BackgroundColor = {
-  lightMode?: string;
-  darkMode?: string;
+export type Social = {
+  github?: string;
+  twitter?: string;
+  linkedin?: string;
+  disabled: boolean;
 };
+
+export type Galleries = Gallery[];
 
 export type Gallery = {
-  category?: Category[];
-};
-
-export type Category = {
   name?: string;
   images?: Image[];
-  params?: Params;
 };
 
 export type Image = {
   name: string;
   description?: string;
-};
-
-export type Params = {
-  row?: number;
-  column?: number;
-};
-
-export type Header = {
-  title?: string;
-  description?: string;
-  profile?: string;
-  disabled?: boolean;
 };

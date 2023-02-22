@@ -1,16 +1,15 @@
 import React from "react";
 
 import GalleryImage from "./GalleryImage";
-import { Image, Category } from "../types";
+import { Gallery } from "../types";
 import "../index.scss";
 
 type Props = {
-  name: Category["name"];
-  images: Image[];
+  name: Gallery["name"];
+  images: Gallery["images"];
   isDialogOpen: boolean;
   setIsDialogOpen: (a: boolean) => void;
   setCurrentImage: (a: string) => void;
-  // any props you want to pass to the component
 };
 
 const GalleryContent: React.FC<Props> = ({
@@ -23,7 +22,7 @@ const GalleryContent: React.FC<Props> = ({
   if (!images) return null;
   return (
     <>
-      {!isDialogOpen && <div className="gallery__name">{name}</div>}
+      {!isDialogOpen && name && <div className="gallery__name">{name}</div>}
       <div className="gallery__content">
         {images.map((image, index) => {
           return (
