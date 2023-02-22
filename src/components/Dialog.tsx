@@ -1,10 +1,4 @@
-import React, {
-  TouchEventHandler,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { TouchEventHandler, useMemo, useRef, useState } from "react";
 
 import { galleries } from "../configs/data";
 import { Download } from "../icons/icons";
@@ -19,7 +13,6 @@ type Props = {
 const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   const dialogRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
-  const [resizeClass, setResizeClass] = useState("");
 
   const allImageNames = galleries.reduce(
     (acc: string[], currentCategory) =>
@@ -79,24 +72,6 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
       else swipeLeft();
   };
 
-  useEffect(() => {
-    if (imgRef.current?.width!) {
-      const x = imgRef.current?.width;
-
-      switch (true) {
-        case x < 650:
-          setResizeClass("dialog__image-container--rescale-7");
-          break;
-        case x < 850:
-          setResizeClass("dialog__image-container--rescale-5");
-          break;
-        default:
-          setResizeClass("dialog__image-container--rescale-3");
-          break;
-      }
-    }
-  }, [currentImageIndex]);
-
   let imageSrc: string;
   if (allImageNames[currentImageIndex])
     try {
@@ -139,26 +114,12 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
       <div
         className={`dialog__image-container  ${
           isDialogOpen ? "dialog__image-container--transition" : ""
-        } ${resizeClass}`}
+        }`}
       >
         {isDialogOpen && (
           <img className="dialog__img" src={imageSrc ?? ""} ref={imgRef} />
         )}
       </div>
-      {isDialogOpen && (
-        <div
-          className={`dialog__description  ${
-            isDialogOpen ? "dialog__description--transition" : ""
-          }`}
-        >
-          <div onClick={handleDownloadClick}>
-            <Download />
-          </div>
-          <div style={{ marginTop: "2px" }}>
-            {allImageDesriptions[currentImageIndex]}
-          </div>
-        </div>
-      )}
       {isDialogOpen && (
         <button
           className={`dialog__button ${
@@ -170,6 +131,23 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
         >
           <i className="dialog__arrow dialog__right" />
         </button>
+      )}
+      {isDialogOpen && (
+        <div
+          className={`dialog__description  ${
+            isDialogOpen ? "dialog__description--transition" : ""
+          }`}
+        >
+          <div
+            className="dialog__description-content"
+            onClick={handleDownloadClick}
+          >
+            <Download />
+          </div>
+          <div className="dialog__description-content">
+            {allImageDesriptions[currentImageIndex]}
+          </div>
+        </div>
       )}
     </div>
   );

@@ -2,13 +2,14 @@
 
 .dialog {
   position: fixed;
-  width: 100%;
-  height: 80%;
+  height: 100vh;
+  width: 100vw;
   z-index: 10000;
   display: flex;
   justify-content: space-between;
   transition: visibility 0.1s ease-out;
   visibility: hidden;
+  background-color: var(--color-primary);
 }
 
 .dialog--visible {
@@ -18,21 +19,29 @@
 .dialog__image-container {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 80%;
   transition: transform 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.2s ease-in !important;
   transform: scale(0);
+  -webkit-transform: scale(0) !important;
 }
 
 .dialog__image-container--transition {
   transition: transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in !important;
   transform: scale(1);
+  -webkit-transform: scale(1) !important;
 }
 
 .dialog__img {
+  // box-shadow: 0 8px 8px -4px black;
   object-fit: contain;
-  min-height: 100%;
   border-radius: 2px;
-  box-shadow: 0 8px 8px -4px black;
+  height: 90vh;
+  width: 95vw;
+  max-width: 100vw;
+  max-height: 100vh;
+  padding-top: 10px;
 }
 
 .dialog__description {
@@ -40,21 +49,28 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 100%;
+  bottom: 5px;
   left: 50%;
   transform: translate(-50%, -50%);
-  bottom: 0;
-  margin-top: 3%;
+  margin-top: 10px;
   height: fit-content;
   width: 30%;
-  padding: 5px;
   text-align: center;
   opacity: 0;
+  -webkit-opacity: 0;
   transition: opacity 1s ease;
+  -webkit-transition: -webkit-opacity 0.2s ease-in;
+  min-height: 80px;
+}
+
+.dialog__description-content {
+  display: inline-block;
+  align-self: flex-end;
 }
 
 .dialog__description--transition {
   opacity: 1;
+  -webkit-opacity: 1;
 }
 
 .dialog__button {
@@ -94,39 +110,24 @@
   /* For mobile phones: */
 
   .dialog {
-    height: 90%;
+    height: 95vh;
+    width: 100vw;
   }
 
   .dialog__image-container {
-    width: 0;
+    width: 50%;
   }
 
   .dialog__description {
     width: 80%;
-    margin-top: 0;
+    // bottom: -10vh;
   }
 
   .dialog__button {
-    align-self: end;
+    position: relative;
+    bottom: -75%;
+    height: fit-content;
     width: 100%;
     padding: 50px 0;
-  }
-
-  .dialog__image-container--rescale-3 {
-    transform: scale(0.32) !important;
-  }
-  .dialog__image-container--rescale-5 {
-    transform: scale(0.48) !important;
-  }
-  .dialog__image-container--rescale-7 {
-    transform: scale(0.7) !important;
-  }
-}
-
-@supports (-webkit-touch-callout: none) {
-  /* CSS specific to iOS devices */
-  .dialog__img {
-    object-fit: scale-down !important;
-    max-width: 100% !important;
   }
 }
