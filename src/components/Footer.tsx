@@ -26,7 +26,7 @@ const Footer: React.FC<Props> = ({
           href="https://github.com/clementlebas/light-photo-gallery"
           className="footer__link"
         >
-          Get your gallery
+          <div>Get your gallery</div>
           <div>&#xa0; &#8599;</div>
         </a>
         <div
