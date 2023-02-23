@@ -24,7 +24,7 @@ body,
 .header__content,
 .gallery__content {
   padding: 10px;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 .header__content,
@@ -44,6 +44,7 @@ body,
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  margin: 10px 0;
 }
 
 .header__profile {
