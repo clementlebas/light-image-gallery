@@ -75,7 +75,7 @@ const Dialog: React.FC<Props> = ({ isDialogOpen, image }) => {
   let imageSrc: string;
   if (allImageNames[currentImageIndex])
     try {
-      imageSrc = require(`../images/${allImageNames[currentImageIndex]}`);
+      imageSrc = require(`../configs/images/${allImageNames[currentImageIndex]}`);
     } catch (e) {
       console.log(
         "Image source not found",

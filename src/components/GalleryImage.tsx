@@ -22,7 +22,7 @@ const GalleryImage: React.FC<Props> = ({
 }) => {
   let imageSrc;
   try {
-    imageSrc = require(`../images/${imageName}`);
+    imageSrc = require(`../configs/images/${imageName}`);
   } catch (e) {
     console.log("Image source not found", imageName, e);
   }
