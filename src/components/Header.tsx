@@ -16,7 +16,7 @@ const Header: React.FC<Props> = ({ className }) => {
     <div className={`header ${className}`}>
       <div className="header__content">
         <div className="header__profile">
-          <img src={pathImage} className="header__img" />
+          {pathImage && <img src={pathImage} className="header__img" />}
           <div className="header__text">
             <div className="header__title">{header?.title}</div>
             <div className="header__description">{header?.description}</div>
