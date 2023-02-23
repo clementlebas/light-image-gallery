@@ -9,11 +9,14 @@
   justify-content: space-between;
   transition: visibility 0.1s ease-out;
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 500ms ease, visibility 500ms ease;
   background-color: var(--color-primary);
 }
 
 .dialog--visible {
   visibility: visible;
+  opacity: 1;
 }
 
 .dialog__image-container {
