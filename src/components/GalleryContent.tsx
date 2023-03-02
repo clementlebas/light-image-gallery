@@ -5,7 +5,7 @@ import { Gallery } from "../types";
 import "../index.scss";
 
 type Props = {
-  name: Gallery["name"];
+  category: Gallery["category"];
   images: Gallery["images"];
   isDialogOpen: boolean;
   setIsDialogOpen: (a: boolean) => void;
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const GalleryContent: React.FC<Props> = ({
-  name,
+  category,
   images,
   isDialogOpen,
   setIsDialogOpen,
@@ -22,7 +22,9 @@ const GalleryContent: React.FC<Props> = ({
   if (!images) return null;
   return (
     <>
-      {!isDialogOpen && name && <div className="gallery__name">{name}</div>}
+      {!isDialogOpen && category && (
+        <div className="gallery__name">{category}</div>
+      )}
       <div className="gallery__content">
         {images.map((image, index) => {
           return (

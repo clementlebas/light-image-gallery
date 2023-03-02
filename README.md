@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/clementlebas/light-image-gallery">
-    <img src="./logo.png" alt="Logo" width="80" height="80">
+    <img src="./docs/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h2 align="center">light-image-gallery</h3>
@@ -31,19 +31,10 @@
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#edit-content">Edit content</a></li>
+    <li><a href="#deploy">Deploy</a></li>
   </ol>
 </details>
 
@@ -57,112 +48,153 @@
     <br /> 
   </p>
 
-![Demo app](/demo.gif)
+![Demo app](/docs/demo.gif)
 
 <!-- ABOUT THE PROJECT -->
 
 ---
 
-<!-- GETTING STARTED -->
+## **Prerequisites**
 
-## Getting Started
+If you haven't already, you need to download GIT and NodeJS :
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+- [nodejs.org](https://nodejs.org/)
+- [git-scm.com](https://git-scm.com/downloads)
 
-### Prerequisites
+I recommand to minify your image to improve your site loading performance ([imagecompressor.com](https://imagecompressor.com/), [compressnow.com](https://compressnow.com/))
 
-This is an example of how to list things you need to use the software and how to install them.
+## **Installation**
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+First, start by clicking the 'Use this template' button and 'Create a new repository'. It will create a clone of this repository.
 
-### Installation
+![Demo app](/docs/usetemplate.png)
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
-   ```
+Then, name it whatever ya want.
+
+![Demo app](/docs/createrepo.png)
+
+Once your new repository is created , enter the following command into your favorite terminal:
+
+```sh
+ git clone https://github.com/<--USER-->/<--REPO-->
+ cd <--FOLDER-NAME-->
+```
+
+Then you need to install dependencies into your project so the stuff actually works !
+
+```sh
+npm i
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
+## **Edit content**
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+To edit the content, everything happens in `src/configs` folder. Everything is optionnal so custom the content as you wish !
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### **Header**
+
+- Place your profile picture in `src/configs` folder
+
+- Edit the **header** variable in `src/configs/data.tsx` file :
+
+```json
+{
+  title: "Hey there, I'm Billy Crawford.",
+  description: "Welcome to my images gallery !",
+  image: require("./profile.png"),
+  disabled: false,
+}
+```
+
+- You can also add your social link in the **social** variable :
+
+```json
+{
+  "github": "https://github.com/billycrawford",
+  "twitter": "https://twitter.com/billycrawford",
+  "linkedin": "https://www.linkedin.com/in/billycrawford",
+  "disabled": false
+}
+```
+
+### **Images galleries**
+
+- Place your images in the `src/configs/images` folder. Actually, the image extension supported are : **eot|svg|ttf|woff|woff2|png|jpg|gif**
+
+- Edit the **galleries** variable in `src/configs/data.tsx` file :
+
+```json
+[
+  {
+    category: "Category name",
+    images: [
+      {
+        name: "image.png", // Important: specify the extension
+        description: "Description of image 1",
+      },
+      {
+        name: "image2.png",
+        description: "Description of image 2",
+      },
+      ..., // duplicate image object for more
+    ],
+  },
+  ..., // duplicate gallery object for more
+]
+```
+
+### **Colors**
+
+You can change the color of your site with the light and dark mode in `src/configs/colors.scss` file :
+
+```css
+.app.light {
+  --color-primary: #f7f7f7;
+  --color-secondary: #dfe3ee;
+  --color-text: #001a2c;
+}
+
+.app.dark {
+  --color-primary: #002137;
+  --color-secondary: #001a2c;
+  --color-text: #f1f1e6;
+}
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ROADMAP -->
+## **Deploy**
 
-## Roadmap
+- **Run locally!**
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
+  To see it in action in your browser, run the start script:
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+```sh
+npm run start
+```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- **Deploy onto a live website!**
 
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+  1. First, create a Netlify account : [netlify.com](https://app.netlify.com/)
+  2. Then click on 'Import an existing project' and connect your github account :
+     ![Demo app](/docs/importproject.png)
+  3. Pick your hithub repo create with the template :
+     ![Demo app](/docs/pickrepo.png)
+  4. Then click on 'Deploy' (the site deployment can be a bit long)
+  5. Netlify will give you a random domain _(ex: https://voluble-bavarois-6f8126.netlify.app)_.
+     You are free to buy a custom domain if you want by following Netlify set up !
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
+---
 
-## License
+**_VOILA !_** 🎉
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+You're brand new portfolio should be ready to go!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Share it with some friends, family members, employers?
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-- []()
-- []()
-- []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-[Next.js]: https://img.shields.io/badge/typescript.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white

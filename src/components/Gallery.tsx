@@ -39,7 +39,7 @@ const Gallery: React.FC<Props> = ({ isDialogOpen, setIsDialogOpen }) => {
               key={indexGallery}
             >
               <GalleryContent
-                name={gallery.name}
+                category={gallery.category}
                 images={gallery.images}
                 isDialogOpen={isDialogOpen}
                 setIsDialogOpen={setIsDialogOpen}

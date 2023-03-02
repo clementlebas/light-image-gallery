@@ -15,7 +15,7 @@ export type Social = {
 export type Galleries = Gallery[];
 
 export type Gallery = {
-  name?: string;
+  category?: string;
   images?: Image[];
 };
 
