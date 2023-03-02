@@ -17,7 +17,7 @@
   </a>
 
   <h2 align="center">light-image-gallery</h3>
-  <a href="https://gallery.clementlebas.fr/">View Demo</a>
+  <a href="https://gallery.clementlebas.dev/">View Demo</a>
   ·
   <a href="https://github.com/clementlebas/light-image-gallery/issues">Report Bug</a>
   <br />
