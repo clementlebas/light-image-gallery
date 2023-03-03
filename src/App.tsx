@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
@@ -11,6 +11,7 @@ const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("mode") !== "light"
   );
+  const appRef = useRef<HTMLDivElement>(null);
 
   // Lock scroll navigation when dialog is open
   const body = document.querySelector("body")!;
@@ -23,13 +24,28 @@ const App = () => {
     } else {
       body.style.overflow = "visible";
       html.style.overflow = "visible";
-      body.scrollTo(0, Number(localStorage.getItem("scrollPostion")) ?? 0);
-      html.scrollTo(0, Number(localStorage.getItem("scrollPostion")) ?? 0);
+      body.scrollTo(0, Number(localStorage.getItem("scrollPosition")) ?? 0);
+      html.scrollTo(0, Number(localStorage.getItem("scrollPosition")) ?? 0);
     }
   }, [isDialogOpen]);
 
+  useEffect(() => {
+    window.addEventListener("beforeunload", scrollOnTop);
+    return () => {
+      window.removeEventListener("beforeunload", scrollOnTop);
+    };
+  }, []);
+
+  const scrollOnTop = () => {
+    localStorage.setItem("scrollPosition", String(0));
+  };
+
   return (
-    <div className={`app ${isDarkMode ? "dark" : "light"}`} id="app">
+    <div
+      ref={appRef}
+      className={`app ${isDarkMode ? "dark" : "light"}`}
+      id="app"
+    >
       <Header className={isDialogOpen ? "header--animation" : ""} />
       <Gallery isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
       <Footer
