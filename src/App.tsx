@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
@@ -15,15 +15,18 @@ const App = () => {
   // Lock scroll navigation when dialog is open
   const body = document.querySelector("body")!;
   const html = document.querySelector("html")!;
-  if (isDialogOpen) {
-    body.style.overflow = "hidden";
-    html.style.overflow = "hidden";
-  } else {
-    body.style.overflow = "visible";
-    html.style.overflow = "visible";
-    body.scrollTo(0, Number(localStorage.getItem("scrollPostion")) ?? 0);
-    html.scrollTo(0, Number(localStorage.getItem("scrollPostion")) ?? 0);
-  }
+
+  useEffect(() => {
+    if (isDialogOpen) {
+      body.style.overflow = "hidden";
+      html.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "visible";
+      html.style.overflow = "visible";
+      body.scrollTo(0, Number(localStorage.getItem("scrollPostion")) ?? 0);
+      html.scrollTo(0, Number(localStorage.getItem("scrollPostion")) ?? 0);
+    }
+  }, [isDialogOpen]);
 
   return (
     <div className={`app ${isDarkMode ? "dark" : "light"}`} id="app">
