@@ -193,7 +193,7 @@ npm run start
 
 **_VOILA !_** 🎉
 
-You're brand new portfolio should be ready to go!
+You're brand new gallery images should be ready to go!
 
 Share it with some friends, family members, employers?
 
