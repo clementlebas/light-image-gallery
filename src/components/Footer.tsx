@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Sun } from "../icons/icons";
+import { ExternalLink, Sun } from "../icons/icons";
 import "../index.scss";
 
 type Props = {
@@ -27,7 +27,9 @@ const Footer: React.FC<Props> = ({
           className="footer__link"
         >
           <div>Get your gallery</div>
-          <div>&#xa0; &#8599;</div>
+          <div>
+            <ExternalLink />
+          </div>
         </a>
         <div
           onClick={() => {
