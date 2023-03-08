@@ -122,7 +122,7 @@ To edit the content, everything happens in `src/configs` folder. Everything is o
 
 ### **Images galleries**
 
-- Place your images in the `src/configs/images` folder. Actually, the image extension supported are : **eot|svg|ttf|woff|woff2|png|jpg|gif**
+- Place your images in the `src/configs/images` folder. Actually, the image extension supported are : **eot,svg,ttf,woff,woff2,png,jpg,gif,webp,jpeg**
 
 - Edit the **galleries** variable in `src/configs/data.tsx` file :
 
