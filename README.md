@@ -197,4 +197,9 @@ You're brand new gallery images should be ready to go!
 
 Share it with some friends, family members, employers?
 
+<div align="center">
+<a target="_blank" href="https://www.producthunt.com/posts/light-image-gallery?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-light&#0045;image&#0045;gallery" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=389766&theme=light" alt="light&#0045;image&#0045;gallery - A&#0032;light&#0032;image&#0032;gallery&#0032;that&#0032;you&#0032;can&#0032;custom | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+</div>
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
